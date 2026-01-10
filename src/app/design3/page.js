@@ -1,7 +1,5 @@
 import React from 'react'
 import styles from "../page.module.css";
-import Logo2 from '../../../public/assets/svgs/Logo2';
-import Lock from '../../../public/assets/svgs/Lock';
 const page = () => {
   return (
      <main className={styles.hero}>
@@ -28,7 +26,7 @@ const page = () => {
         <p className={styles.gradientText}>
           We were too! <br></br>
           And that's why we built<br></br>
-                    <span className={styles.brownGrad}>ClientLeaf™</span>
+                    <span className={styles.purpleGrad}>ClientLeaf™</span>
 
         </p>
        
@@ -37,10 +35,10 @@ const page = () => {
 
         {/* RIGHT CARD */}
         <div className={styles.card}>
-                    <img src="/assets/images/brownbg.png" alt="three-dots" className={styles.multibg} />
-
           <div className={styles.logo}>
-         <Logo2 />
+            <span />
+            <span />
+            <span />
           </div>
 
           <h1>
@@ -50,14 +48,14 @@ const page = () => {
           </h1>
 
           <div className={styles.avatars}>
-                        <img src="/assets/images/profiles.png" width={120} height={40} alt="profiles" />
-
+            <img src="/avatar1.png" alt="" />
+            <img src="/avatar2.png" alt="" />
+            <img src="/avatar3.png" alt="" />
             <span>+23 More Already Joined</span>
           </div>
 
-          <button className={`${styles.cta} ${styles.brownbtn}`}>
-            <img src="/assets/images/brownbtn.png" alt="shade" />
-               <Lock fill="#ffffffe3" /> Request Early Access
+          <button className={styles.cta}>
+            🔒 Request Early Access
           </button>
 
           <small className={styles.footer}>

@@ -7,7 +7,7 @@ export default function Home() {
     <div className={styles.page}>
      <Link href="/design1">Design 1</Link>
       <Link href="/design2">Design 2</Link>
-       <Link href="/design3">Design 3</Link>
+       {/* <Link href="/design3">Design 3</Link> */}
     </div>
   );
 }
