@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "../page.module.css";
+import styles from "./design1.module.scss";
 import Logo1 from '../../../public/assets/svgs/Logo1';
 import Lock from '../../../public/assets/svgs/Lock';
 const page = () => {

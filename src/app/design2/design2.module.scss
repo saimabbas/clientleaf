@@ -1,17 +1,6 @@
-.page{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding: 20px;
-  font-size: 1.8rem;
-  background-color: black;
-  color: white;
-  height: 100vh;
-}
 
 .hero {
-  height: 100vh;
+  // height: 100vh;
 background: #030712;
 width: 100%;
   display: flex;
@@ -21,7 +10,7 @@ width: 100%;
 
 .heroInner {
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
   display: grid;
   grid-template-columns: 1fr 550px;
   grid-gap: 4rem;
@@ -35,9 +24,9 @@ width: 100%;
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 2rem;
-      padding: 2rem 0rem;
 }
 .gradientText {
   background: linear-gradient(270deg, #10161F -16.25%, #4F5867 100%);
@@ -48,6 +37,7 @@ width: 100%;
   font-weight: 500;
   line-height: 140%;
   font-size: 3.2rem;
+   color: white; 
 }
 .purpleGrad{
 
@@ -127,7 +117,8 @@ overflow: hidden;
   padding: 1.6rem 2.8rem;
   border-radius: 1000px;
   border: none;
-box-shadow: 0px 4px 194px 0px #FFFFFF40 inset;
+ 
+
 background: #FFFFFF;
 font-size: 1.6rem;
   font-weight: 400;
@@ -144,20 +135,11 @@ display: flex;
   background-color: transparent;
   color: #ffffffe3;
 z-index: 1;
+ backdrop-filter: blur(15px);
+ background: #FFFFFF1A;
+
 }
-.brownbtn img{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-.cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
-}
+
 .cta svg{
   width: 1.8rem;
   height: 1.8rem;
@@ -178,7 +160,7 @@ width: 90px;
     position: absolute;
     bottom: 0;
     z-index: -1;
-        height: 80%;
+        height: 90%;
     width: 100%;
     opacity: 0.8;
 
@@ -189,4 +171,46 @@ width: 90px;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+}
+
+
+
+
+
+
+
+.wordWrapper {
+  display: inline-block;
+height: 1.36em;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+/* moving container */
+.words {
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+/* individual words */
+.words .problem {
+height: 1.26em;
+line-height:  1.3em;
+  display: flex;
+  color: inherit;
+  color:white;
+  align-items: center;
+  white-space: nowrap;
+    background: linear-gradient(270deg, #10161F -16.25%, #4F5867 100%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card .brownbg{
+      z-index: -1;
+      height: 100%;
+      width: 100%;
+    position: absolute;
 }

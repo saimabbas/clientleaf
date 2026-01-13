@@ -1,0 +1,181 @@
+
+.hero {
+  height: 100vh;
+background: #030712;
+width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroInner {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 550px;
+  grid-gap: 4rem;
+
+
+  padding: 6rem 7rem;
+}
+
+/* LEFT */
+.left {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2rem;
+      padding: 2rem 0rem;
+}
+.gradientText {
+  background: linear-gradient(270deg, #10161F -16.25%, #4F5867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 500;
+  line-height: 140%;
+  font-size: 3.2rem;
+}
+.purpleGrad{
+
+  background: linear-gradient(270deg, #A78BFA 61.2%, #FFFFFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+
+
+}
+
+
+
+.left .multiLine {
+
+    background: linear-gradient(90deg, #fb7185 -11.16%, #a78bfa 44.58%, #22c55e 101.32%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+
+
+}
+
+/* CARD */
+.card {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  border-radius: 28px;
+  padding: 48px 40px;
+gap: 2.5rem;
+justify-content: center;
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+
+/* TITLE */
+.card h1 {
+ font-size: 3.3rem;
+  font-weight: 500;
+  line-height: 150%;
+
+  color: #FFFFFFCC;
+
+}
+
+/* AVATARS */
+.avatars {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+
+.avatars span {
+  font-size: 1.6rem;
+  color: #FFFFFFCC;
+
+
+}
+
+/* BUTTON */
+.cta {
+position: relative;
+z-index: 1;
+overflow: hidden;
+  padding: 1.6rem 2.8rem;
+  border-radius: 1000px;
+  border: none;
+box-shadow: 0px 4px 194px 0px #FFFFFF40 inset;
+background: #FFFFFF;
+font-size: 1.6rem;
+  font-weight: 400;
+  cursor: pointer;
+  color: #374151;
+display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.brownbtn{
+  background-color: transparent;
+  color: #ffffffe3;
+z-index: 1;
+}
+.brownbtn img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+}
+.cta svg{
+  width: 1.8rem;
+  height: 1.8rem;
+}
+/* FOOTER */
+.footer {
+color: #FFFFFFCC;
+
+  font-size: 1.4rem;
+position: absolute;
+    bottom: 3.5rem;
+}
+.logo svg {
+width: 90px;
+    height: 38px;
+}
+.card .multibg{
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+        height: 80%;
+    width: 100%;
+    opacity: 0.8;
+
+}
+.brownGrad {
+  background: linear-gradient(270deg, #ff6f00 -8.8%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}

@@ -1,5 +1,5 @@
 import { Manrope } from "next/font/google";
-import "./globals.css";
+import "./styles/globals.scss";
 
 const manrope = Manrope({
   subsets: ["latin"],
