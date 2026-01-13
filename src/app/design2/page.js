@@ -9,6 +9,7 @@ import gsap from "gsap";
 import BrownBg from "../../../public/assets/svgs/BrownBg";
 
 const page = () => {
+  //animation
   const wordsRef = useRef(null);
 
   useEffect(() => {
