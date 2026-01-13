@@ -37,7 +37,7 @@ const page = () => {
 
     return () => tl.kill();
   }, []);
-  //comment
+
   return (
     <main className={styles.hero}>
       <section className={styles.heroInner}>
