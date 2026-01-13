@@ -1,8 +1,7 @@
-
 .hero {
   // height: 100vh;
-background: #030712;
-width: 100%;
+  background: #030712;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,21 +14,24 @@ width: 100%;
   grid-template-columns: 1fr 550px;
   grid-gap: 4rem;
 
-
   padding: 6rem 7rem;
 }
 
 /* LEFT */
 .left {
-
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 2rem;
 }
+.left img {
+  width: 100%;
+  height: auto;
+}
 .gradientText {
-  background: linear-gradient(270deg, #10161F -16.25%, #4F5867 100%);
+  background: linear-gradient(270deg, #10161f -16.25%, #4f5867 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -37,30 +39,27 @@ width: 100%;
   font-weight: 500;
   line-height: 140%;
   font-size: 3.2rem;
-   color: white; 
+  color: white;
 }
-.purpleGrad{
-
-  background: linear-gradient(270deg, #A78BFA 61.2%, #FFFFFF 100%);
+.purpleGrad {
+  background: linear-gradient(270deg, #a78bfa 61.2%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-
-
 }
-
-
 
 .left .multiLine {
-
-    background: linear-gradient(90deg, #fb7185 -11.16%, #a78bfa 44.58%, #22c55e 101.32%);
+  background: linear-gradient(
+    90deg,
+    #fb7185 -11.16%,
+    #a78bfa 44.58%,
+    #22c55e 101.32%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-
-
 }
 
 /* CARD */
@@ -70,27 +69,22 @@ width: 100%;
   z-index: 1;
   border-radius: 28px;
   padding: 48px 40px;
-gap: 2.5rem;
-justify-content: center;
-
-
+  gap: 2.5rem;
+  justify-content: center;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-
-
-
 /* TITLE */
 .card h1 {
- font-size: 3.3rem;
+  font-size: 3.3rem;
   font-weight: 500;
   line-height: 150%;
 
-  color: #FFFFFFCC;
-
+  color: #ffffffcc;
 }
 
 /* AVATARS */
@@ -100,70 +94,63 @@ justify-content: center;
   gap: 8px;
 }
 
-
-
 .avatars span {
   font-size: 1.6rem;
-  color: #FFFFFFCC;
-
-
+  color: #ffffffcc;
 }
 
 /* BUTTON */
 .cta {
-position: relative;
-z-index: 1;
-overflow: hidden;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
   padding: 1.6rem 2.8rem;
   border-radius: 1000px;
   border: none;
- 
 
-background: #FFFFFF;
-font-size: 1.6rem;
+  background: #ffffff;
+  font-size: 1.6rem;
   font-weight: 400;
   cursor: pointer;
   color: #374151;
-display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.brownbtn{
+.brownbtn {
   background-color: transparent;
   color: #ffffffe3;
-z-index: 1;
- backdrop-filter: blur(15px);
- background: #FFFFFF1A;
-
+  z-index: 1;
+  backdrop-filter: blur(15px);
+  background: #ffffff1a;
 }
 
-.cta svg{
+.cta svg {
   width: 1.8rem;
   height: 1.8rem;
 }
 /* FOOTER */
 .footer {
-color: #FFFFFFCC;
+  color: #ffffffcc;
 
   font-size: 1.4rem;
-position: absolute;
-    bottom: 3.5rem;
+  position: absolute;
+  bottom: 3.5rem;
 }
 .logo svg {
-width: 90px;
-    height: 38px;
+  width: 90px;
+  height: 38px;
 }
-.card .multibg{
-    position: absolute;
-    bottom: 0;
-    z-index: -1;
-        height: 90%;
-    width: 100%;
-    opacity: 0.8;
-
+.card .multibg {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  height: 90%;
+  width: 100%;
+  opacity: 0.8;
 }
 .brownGrad {
   background: linear-gradient(270deg, #ff6f00 -8.8%, #fff 100%);
@@ -173,15 +160,9 @@ width: 90px;
   color: transparent;
 }
 
-
-
-
-
-
-
 .wordWrapper {
   display: inline-block;
-height: 1.36em;
+  height: 1.36em;
   overflow: hidden;
   vertical-align: bottom;
 }
@@ -190,27 +171,26 @@ height: 1.36em;
 .words {
   display: flex;
   flex-direction: column;
- 
 }
 
 /* individual words */
 .words .problem {
-height: 1.26em;
-line-height:  1.3em;
+  height: 1.26em;
+  line-height: 1.3em;
   display: flex;
   color: inherit;
-  color:white;
+  color: white;
   align-items: center;
   white-space: nowrap;
-    background: linear-gradient(270deg, #10161F -16.25%, #4F5867 100%);
+  background: linear-gradient(270deg, #10161f -16.25%, #4f5867 100%);
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.card .brownbg{
-      z-index: -1;
-      height: 100%;
-      width: 100%;
-    position: absolute;
+.card .brownbg {
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }

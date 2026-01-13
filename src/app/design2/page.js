@@ -42,9 +42,9 @@ const page = () => {
       <section className={styles.heroInner}>
         {/* LEFT */}
         <div className={styles.left}>
-          <img src="/assets/images/temp1.png" width={765}></img>
-          <img src="/assets/images/temp2.png" width={765}></img>
-          <img src="/assets/images/temp3.png" width={765}></img>
+          <img src="/assets/images/temp1.png" ></img>
+          <img src="/assets/images/temp2.png" ></img>
+          <img src="/assets/images/temp3.png" ></img>
 
           <p className={styles.gradientText}>
             Sick of{" "}
