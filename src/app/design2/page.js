@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import styles from "./design2.module.scss";
 import Logo2 from "../../../public/assets/svgs/Logo2";
@@ -38,14 +38,119 @@ const page = () => {
     return () => tl.kill();
   }, []);
 
+
+  
+const headers = [
+  "Sent",
+  "Viewed",
+  "Replies",
+  "Hires",
+  "View Rate",
+  "Reply Rate",
+  "Connects",
+];
+
+const rows = [
+  [20, 13, 10, 6, "75%", "97%", 200],
+  [20, 13, 10, 6, "75%", "97%", 200],
+  [20, 13, 10, 6, "75%", "97%", 200],
+];
+const stats = [
+  {
+    title: "Connects Spent",
+    value: "435",
+    percent: "+75%",
+    positive: true,
+  },
+  {
+    title: "No. of Interviews",
+    value: "280",
+    percent: "+145%",
+    positive: true,
+  },
+  {
+    title: "View Rate",
+    value: "38%",
+    percent: "+75%",
+    positive: true,
+  },
+  {
+    title: "Client Acquisition Cost",
+    value: "$25",
+    percent: "-66%",
+    positive: false,
+  },
+];
+
+ const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+
   return (
     <main className={styles.hero}>
       <section className={styles.heroInner}>
         {/* LEFT */}
         <div className={styles.left}>
-          <img src="/assets/images/temp1.png" className={styles.tempImage}></img>
-          <img src="/assets/images/temp2.png" ></img>
-          <img src="/assets/images/temp3.png" ></img>
+          <div className={styles.reportTable}>
+            <h3>Daily Performance Report</h3>
+
+            <div className={styles.tableWrapper}>
+      <table className={styles.table}>
+        <thead>
+          <tr>
+            {headers.map((head, index) => (
+              <th key={head}
+  className={index === 0 ? styles.colOne : undefined}>{head}</th>
+            ))}
+          </tr>
+        </thead>
+
+        <tbody>
+          {rows.map((row, i) => (
+            <tr key={i}>
+              {row.map((cell, j) => (
+                <td key={j}  className={j === 0 ? styles.colOne : undefined}>{cell}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+          </div>
+
+            <section className={styles.wrapper}>
+      <div className={styles.grid}>
+        {stats.map((item, index) => (
+          <div
+            key={index}
+            className={`${styles.leftCard} ${mounted ? styles.show : ""}`}
+            style={{ transitionDelay: `${index * 120}ms` }}
+          >
+            <p className={styles.title}>{item.title}</p>
+
+            <div className={styles.row}>
+              <h2 className={styles.value}>{item.value}</h2>
+
+              <span
+                className={`${styles.percent} ${
+                  item.positive ? styles.green : styles.red
+                }`}
+              >
+                {item.percent}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+
+
+          {/* <img src="/assets/images/temp1.png" className={styles.tempImage}></img> */}
+          <img src="/assets/images/temp3.png" className={styles.temp3}></img>
 
           <p className={styles.gradientText}>
             Sick of{" "}

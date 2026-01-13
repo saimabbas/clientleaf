@@ -1,3 +1,4 @@
+@use "@/app/styles/variables" as *;
 .hero {
   // height: 100vh;
   background: #030712;
@@ -9,12 +10,12 @@
 
 .heroInner {
   width: 100%;
-  // height: 100vh;
+   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 550px;
   grid-gap: 4rem;
 
-  padding: 6rem 7rem;
+  padding: 5rem 5rem;
 }
 
 /* LEFT */
@@ -35,6 +36,149 @@
 .tempImage{
   width: 80rem !important;
 }
+.temp3{
+
+}
+
+.reportTable{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+  h3{
+color: $gray-600;
+font-size: 1.8rem;
+font-weight: 600;
+  }
+  .tableWrapper {
+ width: 100%;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  th {
+    text-align: left;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $gray-600;
+
+    padding: 1.8rem 0;
+      border-bottom:  1px solid #FFFFFF0D;
+    
+  }
+}
+.colOne{
+      padding-left: 2rem;
+}
+
+tbody {
+  tr {
+      border-bottom:  1px solid #FFFFFF0D;
+
+    // &:first-child {
+    //   border-top: 1px solid rgba(255, 255, 255, 0.06);
+    // }
+  }
+
+  td {
+    padding: 1.8rem 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: $gray-600;
+  }
+}
+
+}
+
+.left{
+  .wrapper {
+  width: 100%;
+  padding: 2.2rem 0;
+
+
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:1.5rem;
+}
+
+.leftCard {
+  height: 130px;
+  padding:2rem;
+  border-radius: 1.5rem;
+background: #FFFFFF03;
+
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.title {
+  font-size: 1.6rem;
+  color: $gray-600;
+  margin-bottom: 14px;
+  font-weight: 600;
+      white-space: nowrap;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.value {
+  font-size: 32px;
+  font-weight: 600;
+  color: $gray-500;
+}
+
+.percent {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.green {
+
+color: #047857;
+
+}
+
+.red {
+     color: #ef4444cc;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+}
+
+
 .gradientText {
   background: linear-gradient(270deg, #10161f -16.25%, #4f5867 100%);
   -webkit-background-clip: text;
@@ -43,7 +187,7 @@
   color: transparent;
   font-weight: 500;
   line-height: 140%;
-  font-size: 3.2rem;
+  font-size: 2.8rem;
   color: white;
 }
 .purpleGrad {
