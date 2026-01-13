@@ -20,15 +20,20 @@
 /* LEFT */
 .left {
   width: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 2rem;
 }
+
 .left img {
   width: 100%;
   height: auto;
+}
+.tempImage{
+  width: 80rem !important;
 }
 .gradientText {
   background: linear-gradient(270deg, #10161f -16.25%, #4f5867 100%);

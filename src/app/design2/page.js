@@ -42,7 +42,7 @@ const page = () => {
       <section className={styles.heroInner}>
         {/* LEFT */}
         <div className={styles.left}>
-          <img src="/assets/images/temp1.png" ></img>
+          <img src="/assets/images/temp1.png" className={styles.tempImage}></img>
           <img src="/assets/images/temp2.png" ></img>
           <img src="/assets/images/temp3.png" ></img>
 
