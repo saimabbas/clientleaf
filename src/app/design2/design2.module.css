@@ -1,4 +1,3 @@
-@use "../styles/variables" as *;
 .hero {
   height: 100vh;
   background: #030712;
@@ -32,12 +31,12 @@
 .left img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
+
 .tempImage {
   width: 80rem !important;
-}
-.temp3 {
 }
 
 .reportTable {
@@ -47,129 +46,104 @@
   align-items: flex-start;
   flex-direction: column;
   gap: 1rem;
-  h3 {
-    color: $gray-600;
-    font-size: 1.8rem;
-    font-weight: 600;
-    display: none;
-  }
-  .tableWrapper {
-    width: 100%;
-    height: 150px;
-    overflow: hidden;
-  }
-
-  .table {
-    width: 1000px;
-    border-collapse: collapse;
-  }
-
-  thead {
-    th {
-      text-align: left;
-      font-size: 1.4rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: $gray-600;
-
-      padding: 1.8rem 0;
-      border-bottom: 1px solid #ffffff0d;
-    }
-  }
-  .colOne {
-    padding-left: 2rem;
-  }
-
-  tbody {
-    tr {
-      border-bottom: 1px solid #ffffff0d;
-
-      // &:first-child {
-      //   border-top: 1px solid rgba(255, 255, 255, 0.06);
-      // }
-    }
-
-    td {
-      padding: 1.8rem 0;
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: $gray-600;
-    }
-  }
+}
+.reportTable h3 {
+  color: #4b5563;
+  font-size: 1.8rem;
+  font-weight: 600;
+  display: none;
+}
+.reportTable .tableWrapper {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+.reportTable .table {
+  width: 1000px;
+  border-collapse: collapse;
+}
+.reportTable thead th {
+  text-align: left;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #4b5563;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.0509803922);
+}
+.reportTable .colOne {
+  padding-left: 2rem;
+}
+.reportTable tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.0509803922);
+}
+.reportTable tbody td {
+  padding: 1.8rem 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #4b5563;
 }
 
 .left {
-  .wrapper {
-    width: 100%;
-    padding: 0.5rem 0;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-  }
-
-  .leftCard {
-    // height: 130px;
-    padding: 1.6rem;
-    border-radius: 1.5rem;
-    background: #ffffff03;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.6s ease;
-    min-width: 200px;
-  }
-
-  .show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .title {
-    font-size: 1.6rem;
-    color: $gray-600;
-    margin-bottom: 14px;
-    font-weight: 500;
-    white-space: nowrap;
-  }
-
-  .row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .value {
-    font-size: 2.4rem;
-    font-weight: 600;
-    color: $gray-500;
-  }
-
-  .percent {
-    font-size: 18px;
-    font-weight: 500;
-  }
-
-  .green {
-    color: #047857;
-  }
-
-  .red {
-    color: #ef4444cc;
-  }
-
   /* Responsive */
-  @media (max-width: 1024px) {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+}
+.left .wrapper {
+  width: 100%;
+  padding: 0.5rem 0;
+}
+.left .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.left .leftCard {
+  padding: 1.6rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.0117647059);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+  min-width: 200px;
+}
+.left .show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.left .title {
+  font-size: 1.6rem;
+  color: #4b5563;
+  margin-bottom: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.left .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.left .value {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+.left .percent {
+  font-size: 18px;
+  font-weight: 500;
+}
+.left .green {
+  color: #047857;
+}
+.left .red {
+  color: rgba(239, 68, 68, 0.8);
+}
+@media (max-width: 1024px) {
+  .left .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-
-  @media (max-width: 520px) {
-    .grid {
-      grid-template-columns: 1fr;
-    }
+}
+@media (max-width: 520px) {
+  .left .grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -184,6 +158,7 @@
   font-size: 2.5rem;
   color: white;
 }
+
 .purpleGrad {
   background: linear-gradient(270deg, #a78bfa 61.2%, #ffffff 100%);
   -webkit-background-clip: text;
@@ -193,12 +168,7 @@
 }
 
 .left .multiLine {
-  background: linear-gradient(
-    90deg,
-    #fb7185 -11.16%,
-    #a78bfa 44.58%,
-    #22c55e 101.32%
-  );
+  background: linear-gradient(90deg, #fb7185 -11.16%, #a78bfa 44.58%, #22c55e 101.32%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -226,7 +196,7 @@
   font-size: 3.3rem;
   font-weight: 500;
   line-height: 150%;
-  color: #ffffffcc;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* AVATARS */
@@ -238,7 +208,7 @@
 
 .avatars span {
   font-size: 1.6rem;
-  color: #ffffffcc;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* BUTTON */
@@ -249,7 +219,6 @@
   padding: 1.6rem 2.8rem;
   border-radius: 1000px;
   border: none;
-
   background: #ffffff;
   font-size: 1.6rem;
   font-weight: 400;
@@ -262,30 +231,34 @@
   justify-content: center;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
+
 .brownbtn {
   background-color: transparent;
-  color: #ffffffe3;
+  color: rgba(255, 255, 255, 0.8901960784);
   z-index: 1;
-  backdrop-filter: blur(15px);
-  background: #ffffff1a;
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.1019607843);
 }
 
 .cta svg {
   width: 1.8rem;
   height: 1.8rem;
 }
+
 /* FOOTER */
 .footer {
-  color: #ffffffcc;
-
+  color: rgba(255, 255, 255, 0.8);
   font-size: 1.4rem;
   position: absolute;
   bottom: 3.5rem;
 }
+
 .logo svg {
   width: 90px;
   height: 38px;
 }
+
 .card .multibg {
   position: absolute;
   bottom: 0;
@@ -294,6 +267,7 @@
   width: 100%;
   opacity: 0.8;
 }
+
 .brownGrad {
   background: linear-gradient(270deg, #ff6f00 -8.8%, #fff 100%);
   -webkit-background-clip: text;
@@ -325,7 +299,6 @@
   align-items: center;
   white-space: nowrap;
   background: linear-gradient(270deg, #10161f -16.25%, #4f5867 100%);
-
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -335,4 +308,4 @@
   height: 100%;
   width: 100%;
   position: absolute;
-}
+}/*# sourceMappingURL=design2.module.css.map */

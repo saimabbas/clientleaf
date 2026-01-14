@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useEffect, useRef, useState } from "react";
+import Marquee from "react-fast-marquee";
 
 import styles from "./design2.module.scss";
 import Logo2 from "../../../public/assets/svgs/Logo2";
@@ -38,56 +39,140 @@ const page = () => {
     return () => tl.kill();
   }, []);
 
+  const headers = [
+    "Sent",
+    "Viewed",
+    "Replies",
+    "Hires",
+    "View Rate",
+    "Reply Rate",
+    "Connects",
+  ];
 
-  
-const headers = [
-  "Sent",
-  "Viewed",
-  "Replies",
-  "Hires",
-  "View Rate",
-  "Reply Rate",
-  "Connects",
-];
+  // Initial data
+  const initialRows = [
+    [20, 13, 10, 6, "75%", "97%", 200],
+    [20, 13, 10, 6, "75%", "97%", 200],
+    [20, 13, 10, 6, "75%", "97%", 200],
+  ];
 
-const rows = [
-  [20, 13, 10, 6, "75%", "97%", 200],
-  [20, 13, 10, 6, "75%", "97%", 200],
-  [20, 13, 10, 6, "75%", "97%", 200],
-];
-const stats = [
-  {
-    title: "Connects Spent",
-    value: "435",
-    percent: "+75%",
-    positive: true,
-  },
-  {
-    title: "No. of Interviews",
-    value: "280",
-    percent: "+145%",
-    positive: true,
-  },
-  {
-    title: "View Rate",
-    value: "38%",
-    percent: "+75%",
-    positive: true,
-  },
-  {
-    title: "Client Acquisition Cost",
-    value: "$25",
-    percent: "-66%",
-    positive: false,
-  },
-];
+  // Target values for smooth updates
+  const targetRows = [
+    [45, 28, 18, 12, "82%", "94%", 320],
+    [38, 22, 15, 9, "79%", "91%", 280],
+    [42, 25, 16, 11, "81%", "93%", 310],
+  ];
 
- const [mounted, setMounted] = useState(false);
+  const stats = [
+    {
+      title: "Connects Spent",
+      value: "435",
+      percent: "+75%",
+      positive: true,
+    },
+    {
+      title: "No. of Interviews",
+      value: "280",
+      percent: "+145%",
+      positive: true,
+    },
+    {
+      title: "View Rate",
+      value: "38%",
+      percent: "+75%",
+      positive: true,
+    },
+    {
+      title: "Client Acquisition Cost",
+      value: "$25",
+      percent: "-66%",
+      positive: false,
+    },
+  ];
+
+  const [mounted, setMounted] = useState(false);
+  const [rows, setRows] = useState(initialRows);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const animationRef = useRef(null);
+
+  // Function to animate number values
+  const animateValue = (start, end, duration, setter, rowIndex, colIndex) => {
+    const startTime = performance.now();
+    const startValue =
+      typeof start === "string" ? parseInt(start.replace("%", "")) : start;
+    const endValue =
+      typeof end === "string" ? parseInt(end.replace("%", "")) : end;
+    const isPercentage = typeof start === "string" && start.includes("%");
+
+    const updateValue = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Easing function for smooth animation
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+
+      const currentValue = startValue + (endValue - startValue) * easeOutQuart;
+
+      setter((prev) => {
+        const newRows = [...prev];
+        const formattedValue = isPercentage
+          ? `${Math.round(currentValue)}%`
+          : Math.round(currentValue);
+        newRows[rowIndex][colIndex] = formattedValue;
+        return newRows;
+      });
+
+      if (progress < 1) {
+        animationRef.current = requestAnimationFrame(updateValue);
+      } else {
+        // After reaching target, start reverse animation
+        setTimeout(() => {
+          animateValue(end, start, duration, setter, rowIndex, colIndex);
+        }, 2000); // Wait 2 seconds before reversing
+      }
+    };
+
+    animationRef.current = requestAnimationFrame(updateValue);
+  };
+
+  // Initialize animation
+  useEffect(() => {
+    if (mounted && !isAnimating) {
+      setIsAnimating(true);
+
+      // Animate each cell with staggered delays
+      rows.forEach((row, rowIndex) => {
+        row.forEach((cell, colIndex) => {
+          const startValue = initialRows[rowIndex][colIndex];
+          const endValue = targetRows[rowIndex][colIndex];
+
+          // Stagger the animations
+          const delay = rowIndex * 300 + colIndex * 200;
+
+          setTimeout(() => {
+            animateValue(
+              startValue,
+              endValue,
+              1500, // Animation duration in ms
+              setRows,
+              rowIndex,
+              colIndex
+            );
+          }, delay);
+        });
+      });
+    }
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [mounted]);
 
   useEffect(() => {
     setMounted(true);
   }, []);
-
 
   return (
     <main className={styles.hero}>
@@ -98,56 +183,64 @@ const stats = [
             <h3>Daily Performance Report</h3>
 
             <div className={styles.tableWrapper}>
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            {headers.map((head, index) => (
-              <th key={head}
-  className={index === 0 ? styles.colOne : undefined}>{head}</th>
-            ))}
-          </tr>
-        </thead>
+              <table className={styles.table}>
+                <thead>
+                  <tr>
+                    {headers.map((head, index) => (
+                      <th
+                        key={head}
+                        className={index === 0 ? styles.colOne : undefined}
+                      >
+                        {head}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
 
-        <tbody>
-          {rows.map((row, i) => (
-            <tr key={i}>
-              {row.map((cell, j) => (
-                <td key={j}  className={j === 0 ? styles.colOne : undefined}>{cell}</td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-          </div>
-
-            <section className={styles.wrapper}>
-      <div className={styles.grid}>
-        {stats.map((item, index) => (
-          <div
-            key={index}
-            className={`${styles.leftCard} ${mounted ? styles.show : ""}`}
-            style={{ transitionDelay: `${index * 120}ms` }}
-          >
-            <p className={styles.title}>{item.title}</p>
-
-            <div className={styles.row}>
-              <h2 className={styles.value}>{item.value}</h2>
-
-              <span
-                className={`${styles.percent} ${
-                  item.positive ? styles.green : styles.red
-                }`}
-              >
-                {item.percent}
-              </span>
+                <tbody>
+                  {rows.map((row, i) => (
+                    <tr key={i}>
+                      {row.map((cell, j) => (
+                        <td
+                          key={j}
+                          className={j === 0 ? styles.colOne : undefined}
+                        >
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
-        ))}
-      </div>
-    </section>
 
-
+          <section className={styles.wrapper}>
+            <Marquee speed={10} gradient={false} pauseOnHover={true}>
+              {stats.map((item, index) => (
+                <div
+                  key={index}
+                  className={`${styles.leftCard} ${mounted ? styles.show : ""}`}
+                  style={{
+                    marginRight: "20px",
+                    transitionDelay: `${index * 120}ms`,
+                  }}
+                >
+                  <p className={styles.title}>{item.title}</p>
+                  <div className={styles.row}>
+                    <h2 className={styles.value}>{item.value}</h2>
+                    <span
+                      className={`${styles.percent} ${
+                        item.positive ? styles.green : styles.red
+                      }`}
+                    >
+                      {item.percent}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </Marquee>
+          </section>
 
           {/* <img src="/assets/images/temp1.png" className={styles.tempImage}></img> */}
           <img src="/assets/images/temp3.png" className={styles.temp3}></img>
@@ -176,9 +269,10 @@ const stats = [
 
         {/* RIGHT CARD */}
         <div className={styles.card}>
-          
-   <div className={styles.brownbg}><BrownBg /></div>
-         
+          <div className={styles.brownbg}>
+            <BrownBg />
+          </div>
+
           <div className={styles.logo}>
             <Logo2 />
           </div>
