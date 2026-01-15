@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
 import { useEffect, useRef, useState } from "react";
-import Marquee from "react-fast-marquee";
-
 import styles from "./design2.module.scss";
 import Logo2 from "../../../public/assets/svgs/Logo2";
 import Lock from "../../../public/assets/svgs/Lock";
 import gsap from "gsap";
 import BrownBg from "../../../public/assets/svgs/BrownBg";
+import Customers from "../../../public/assets/images/customers.png";
+import Image from "next/image";
 
 const page = () => {
   //animation
@@ -152,44 +152,7 @@ const page = () => {
     animationRef.current = requestAnimationFrame(updateValue);
   };
 
-  // Initialize animation
-  // useEffect(() => {
-  //   if (mounted && !isAnimating) {
-  //     setIsAnimating(true);
 
-  //     // Animate each cell with staggered delays
-  //     rows.forEach((row, rowIndex) => {
-  //       row.forEach((cell, colIndex) => {
-  //         const startValue = initialRows[rowIndex][colIndex];
-  //         const endValue = targetRows[rowIndex][colIndex];
-
-  //         // Stagger the animations
-  //         const delay = rowIndex * 300 + colIndex * 200;
-
-  //         setTimeout(() => {
-  //           animateValue(
-  //             startValue,
-  //             endValue,
-  //             1500, // Animation duration in ms
-  //             setRows,
-  //             rowIndex,
-  //             colIndex
-  //           );
-  //         }, delay);
-  //       });
-  //     });
-  //   }
-
-  //   return () => {
-  //     if (animationRef.current) {
-  //       cancelAnimationFrame(animationRef.current);
-  //     }
-  //   };
-  // }, [mounted]);
-
-  // useEffect(() => {
-  //   setMounted(true);
-  // }, []);
 
   return (
     <main className={styles.hero}>
@@ -233,31 +196,6 @@ const page = () => {
             </div>
           </div>
 
-          {/* <section className={styles.wrapper}>
-            {stats.map((item, index) => (
-              <div
-                key={index}
-                className={`${styles.leftCard}`}
-                style={{
-                  transitionDelay: `${index * 120}ms`,
-                }}
-              >
-                <p className={styles.title}>{item.title}</p>
-                <div className={styles.row}>
-                  <h2 className={styles.value}>{item.value}</h2>
-                  <span
-                    className={`${styles.percent} ${
-                      item.positive ? styles.green : styles.red
-                    }`}
-                  >
-                    {item.percent}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </section> */}
-
-          {/* <img src="/assets/images/temp1.png" className={styles.tempImage}></img> */}
           <img
             src="/assets/images/ClientLeaf-lottie.png"
             className={styles.temp3}
@@ -302,8 +240,8 @@ const page = () => {
           </h1>
 
           <div className={styles.avatars}>
-            <img
-              src="/assets/images/profiles.png"
+            <Image
+              src={Customers}
               width={120}
               height={40}
               alt="profiles"
