@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
 import { useEffect, useRef, useState } from "react";
-import styles from "./design2.module.scss";
-import Logo2 from "../../../public/assets/svgs/Logo2";
-import Lock from "../../../public/assets/svgs/Lock";
+import styles from "./page.module.scss";
+import Logo2 from "../../public/assets/svgs/Logo2";
+import Lock from "../../public/assets/svgs/Lock";
 import gsap from "gsap";
-import BrownBg from "../../../public/assets/svgs/BrownBg";
-import Customers from "../../../public/assets/images/customers.png";
+import BrownBg from "../../public/assets/svgs/BrownBg";
+import Customers from "../../public/assets/images/customers.png";
 import Image from "next/image";
 
 const page = () => {
