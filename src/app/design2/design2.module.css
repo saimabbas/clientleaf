@@ -1,5 +1,5 @@
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   background: #030712;
   width: 100%;
   display: flex;
@@ -9,7 +9,7 @@
 
 .heroInner {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 550px;
   grid-gap: 4rem;
@@ -278,26 +278,23 @@
 
 .wordWrapper {
   display: inline-block;
-  height: 1.36em;
+  height: 1.2em;
+  transform: translateY(-0.07em);
   overflow: hidden;
-  vertical-align: bottom;
+  vertical-align: middle;
 }
 
 /* moving container */
 .words {
-  display: flex;
-  flex-direction: column;
+  display: block;
 }
 
 /* individual words */
 .words .problem {
-  height: 1.26em;
-  line-height: 1.3em;
-  display: flex;
+  display: block;
+  line-height: 1.2em;
   color: inherit;
   color: white;
-  align-items: center;
-  white-space: nowrap;
   background: linear-gradient(270deg, #10161f -16.25%, #4f5867 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -308,4 +305,10 @@
   height: 100%;
   width: 100%;
   position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.card .brownbg svg {
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=design2.module.css.map */

@@ -17,7 +17,9 @@ const page = () => {
     const words = wordsRef.current;
     const items = words.children;
 
-    const itemHeight = items[0].offsetHeight;
+    // const itemHeight = items[0].offsetHeight;
+    const itemHeight = items[0].getBoundingClientRect().height;
+
     const totalItems = items.length - 1;
 
     gsap.set(words, { y: 0 });
