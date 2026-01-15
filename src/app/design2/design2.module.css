@@ -17,11 +17,17 @@
   grid-gap: 4rem;
   padding: 5rem;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1300px) {
   .heroInner {
-    grid-template-columns: 1fr 450px;
     padding: 3.5rem;
-    gap: 3rem;
+    gap: 3.5rem;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .heroInner {
+    flex-direction: column-reverse;
+    min-height: none;
+    max-height: none;
   }
 }
 @media only screen and (max-width: 980px) {
@@ -60,6 +66,11 @@
     justify-content: flex-end;
   }
 }
+@media only screen and (max-width: 1100px) {
+  .left {
+    height: auto;
+  }
+}
 @media only screen and (max-width: 650px) {
   .left {
     order: 2;
@@ -83,11 +94,6 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
-@media only screen and (max-width: 1440px) {
-  .left img {
-    height: auto;
-  }
-}
 
 .tempImage {
   width: 80rem !important;
@@ -104,7 +110,7 @@
   border-radius: 1.5rem;
   background: rgba(255, 255, 255, 0.01);
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1100px) {
   .reportTable {
     display: none;
   }
@@ -117,7 +123,6 @@
 }
 .reportTable .tableWrapper {
   width: 100%;
-  height: 150px;
   overflow: hidden;
 }
 @media only screen and (min-width: 1550px) {
@@ -196,16 +201,6 @@
   justify-content: space-between;
   height: 100%;
 }
-@media only screen and (max-width: 1200px) {
-  .left .leftCard:last-child {
-    display: none;
-  }
-}
-@media only screen and (max-width: 980px) {
-  .left .leftCard:nth-child(3) {
-    display: none;
-  }
-}
 .left .show {
   opacity: 1;
   transform: translateY(0);
@@ -272,6 +267,11 @@
   font-size: 3rem;
   color: white;
 }
+@media only screen and (max-width: 1300px) {
+  .gradientText {
+    font-size: 2.5rem;
+  }
+}
 @media only screen and (max-width: 980px) {
   .gradientText {
     font-size: 2rem;
@@ -304,11 +304,20 @@
   gap: 2.5rem;
   justify-content: center;
   width: 550px;
+  min-width: 465px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   height: calc(100vh - 10rem);
+  background: rgba(255, 255, 255, 0.01);
+}
+@media only screen and (max-width: 1100px) {
+  .card {
+    width: 100%;
+    height: 75vh;
+    min-height: 80vh;
+  }
 }
 @media only screen and (max-width: 780px) {
   .card {
@@ -331,6 +340,19 @@
   font-weight: 500;
   line-height: 150%;
   color: rgba(255, 255, 255, 0.8);
+}
+@media only screen and (max-width: 1600px) {
+  .card h1 {
+    font-size: 3rem;
+  }
+  .card h1 > br {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .card h1 {
+    font-size: 2.5rem;
+  }
 }
 @media only screen and (max-width: 980px) {
   .card h1 {
@@ -419,7 +441,13 @@
 
 .logo svg {
   width: 90px;
-  height: 38px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media only screen and (max-width: 1300px) {
+  .logo svg {
+    width: 75px;
+  }
 }
 
 .card .multibg {
