@@ -243,7 +243,15 @@ const page = () => {
             <span>+23 More Already Joined</span>
           </div>
 
-          <button className={`${styles.cta} ${styles.brownbtn}`}>
+          <button
+            className={`${styles.cta} ${styles.brownbtn}`}
+            onClick={() =>
+              window.open(
+                "https://forms.clickup.com/36179363/f/12g3d3-5838/CDYNB7UKBCG90MHXWW",
+                "_blank"
+              )
+            }
+          >
             <Lock fill="#ffffffe3" /> Request Early Access
           </button>
 
