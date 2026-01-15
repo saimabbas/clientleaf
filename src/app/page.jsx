@@ -214,7 +214,9 @@ const page = () => {
               </span>
             </span>
             <br></br>
-            and a million more problems? We were too!
+            and a million more problems?
+            <br></br>
+            We were too!
             <br></br>
             And that’s why we built{" "}
             <span className={styles.brownGrad}> ClientLeaf™</span>
