@@ -27,12 +27,15 @@
   }
   @media only screen and (max-width: 1100px) {
     flex-direction: column-reverse;
-    min-height: none;
-    max-height: none;
+    min-height: unset;
+    max-height: unset;
+    .overlayLayer {
+      display: none;
+    }
   }
   @media only screen and (max-width: 980px) {
     padding: 2.5rem;
-    gap: 1.5rem;
+    gap: 5rem;
   }
   @media only screen and (max-width: 650px) {
     flex-direction: column;
@@ -78,6 +81,9 @@
 
   @media only screen and (max-width: 980px) {
     height: auto;
+  }
+  @media only screen and (max-width: 650px) {
+    display: none;
   }
 }
 .tempImage {
@@ -334,7 +340,8 @@
 
   @media only screen and (max-width: 650px) {
     order: 1;
-    height: 80vh;
+    height: 60vh;
+    min-height: 60vh;
     border-radius: 28px;
     min-width: 100%;
   }
@@ -434,8 +441,7 @@
   background: #ffffff1a;
   transition: all 0.3s ease;
 
-  &:hover 
-  {
+  &:hover {
     color: rgba(255, 255, 255, 0.75);
   }
 }
