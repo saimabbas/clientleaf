@@ -56,6 +56,21 @@ const page = () => {
     [20, 13, 10, 6, "75%", "97%", 200],
     [20, 13, 10, 6, "75%", "97%", 200],
     [20, 13, 10, 6, "75%", "97%", 200],
+    [20, 13, 10, 6, "75%", "97%", 200],
+    [20, 13, 10, 6, "75%", "97%", 200],
+    [20, 13, 10, 6, "75%", "97%", 200],
+    [20, 13, 10, 6, "75%", "97%", 200],
+    [20, 13, 10, 6, "75%", "97%", 200],
+    [20, 13, 10, 6, "75%", "97%", 200],
+    [20, 13, 10, 6, "75%", "97%", 200],
+    [20, 13, 10, 6, "75%", "97%", 200],
+    [20, 13, 10, 6, "75%", "97%", 200],
+    [20, 13, 10, 6, "75%", "97%", 200],
+    [20, 13, 10, 6, "75%", "97%", 200],
+    [20, 13, 10, 6, "75%", "97%", 200],
+    [20, 13, 10, 6, "75%", "97%", 200],
+    [20, 13, 10, 6, "75%", "97%", 200],
+    [20, 13, 10, 6, "75%", "97%", 200],
   ];
 
   // Target values for smooth updates
@@ -181,6 +196,7 @@ const page = () => {
       <section className={styles.heroInner}>
         {/* LEFT */}
         <div className={styles.left}>
+          <div className={styles.overlayLayer}></div>
           <div className={styles.reportTable}>
             <h3>Daily Performance Report</h3>
 
@@ -217,7 +233,7 @@ const page = () => {
             </div>
           </div>
 
-          <section className={styles.wrapper}>
+          {/* <section className={styles.wrapper}>
             {stats.map((item, index) => (
               <div
                 key={index}
@@ -239,10 +255,13 @@ const page = () => {
                 </div>
               </div>
             ))}
-          </section>
+          </section> */}
 
           {/* <img src="/assets/images/temp1.png" className={styles.tempImage}></img> */}
-          <img src="/assets/images/temp3.png" className={styles.temp3}></img>
+          <img
+            src="/assets/images/ClientLeaf-lottie.png"
+            className={styles.temp3}
+          ></img>
 
           <p className={styles.gradientText}>
             Sick of{" "}
