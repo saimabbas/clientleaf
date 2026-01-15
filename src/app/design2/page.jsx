@@ -88,7 +88,7 @@ const page = () => {
       title: "Client Acquisition Cost",
       value: "$25",
       percent: "-66%",
-      positive: false,
+      positive: true,
     },
   ];
 
@@ -138,43 +138,43 @@ const page = () => {
   };
 
   // Initialize animation
-  useEffect(() => {
-    if (mounted && !isAnimating) {
-      setIsAnimating(true);
+  // useEffect(() => {
+  //   if (mounted && !isAnimating) {
+  //     setIsAnimating(true);
 
-      // Animate each cell with staggered delays
-      rows.forEach((row, rowIndex) => {
-        row.forEach((cell, colIndex) => {
-          const startValue = initialRows[rowIndex][colIndex];
-          const endValue = targetRows[rowIndex][colIndex];
+  //     // Animate each cell with staggered delays
+  //     rows.forEach((row, rowIndex) => {
+  //       row.forEach((cell, colIndex) => {
+  //         const startValue = initialRows[rowIndex][colIndex];
+  //         const endValue = targetRows[rowIndex][colIndex];
 
-          // Stagger the animations
-          const delay = rowIndex * 300 + colIndex * 200;
+  //         // Stagger the animations
+  //         const delay = rowIndex * 300 + colIndex * 200;
 
-          setTimeout(() => {
-            animateValue(
-              startValue,
-              endValue,
-              1500, // Animation duration in ms
-              setRows,
-              rowIndex,
-              colIndex
-            );
-          }, delay);
-        });
-      });
-    }
+  //         setTimeout(() => {
+  //           animateValue(
+  //             startValue,
+  //             endValue,
+  //             1500, // Animation duration in ms
+  //             setRows,
+  //             rowIndex,
+  //             colIndex
+  //           );
+  //         }, delay);
+  //       });
+  //     });
+  //   }
 
-    return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-    };
-  }, [mounted]);
+  //   return () => {
+  //     if (animationRef.current) {
+  //       cancelAnimationFrame(animationRef.current);
+  //     }
+  //   };
+  // }, [mounted]);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // useEffect(() => {
+  //   setMounted(true);
+  // }, []);
 
   return (
     <main className={styles.hero}>
@@ -218,30 +218,27 @@ const page = () => {
           </div>
 
           <section className={styles.wrapper}>
-            <Marquee speed={10} gradient={false} pauseOnHover={true}>
-              {stats.map((item, index) => (
-                <div
-                  key={index}
-                  className={`${styles.leftCard} ${mounted ? styles.show : ""}`}
-                  style={{
-                    marginRight: "20px",
-                    transitionDelay: `${index * 120}ms`,
-                  }}
-                >
-                  <p className={styles.title}>{item.title}</p>
-                  <div className={styles.row}>
-                    <h2 className={styles.value}>{item.value}</h2>
-                    <span
-                      className={`${styles.percent} ${
-                        item.positive ? styles.green : styles.red
-                      }`}
-                    >
-                      {item.percent}
-                    </span>
-                  </div>
+            {stats.map((item, index) => (
+              <div
+                key={index}
+                className={`${styles.leftCard}`}
+                style={{
+                  transitionDelay: `${index * 120}ms`,
+                }}
+              >
+                <p className={styles.title}>{item.title}</p>
+                <div className={styles.row}>
+                  <h2 className={styles.value}>{item.value}</h2>
+                  <span
+                    className={`${styles.percent} ${
+                      item.positive ? styles.green : styles.red
+                    }`}
+                  >
+                    {item.percent}
+                  </span>
                 </div>
-              ))}
-            </Marquee>
+              </div>
+            ))}
           </section>
 
           {/* <img src="/assets/images/temp1.png" className={styles.tempImage}></img> */}
@@ -282,7 +279,7 @@ const page = () => {
           <h1>
             ClientLeaf™ puts you ahead
             <br />
-            of 95% of UpWorkers.
+            {""} of 95% of UpWorkers.
           </h1>
 
           <div className={styles.avatars}>
