@@ -152,8 +152,6 @@ const page = () => {
     animationRef.current = requestAnimationFrame(updateValue);
   };
 
-
-
   return (
     <main className={styles.hero}>
       <section className={styles.heroInner}>
@@ -240,12 +238,7 @@ const page = () => {
           </h1>
 
           <div className={styles.avatars}>
-            <Image
-              src={Customers}
-              width={120}
-              height={40}
-              alt="profiles"
-            />
+            <Image src={Customers} width={120} height={40} alt="profiles" />
 
             <span>+23 More Already Joined</span>
           </div>
