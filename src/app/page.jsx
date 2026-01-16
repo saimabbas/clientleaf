@@ -1,12 +1,14 @@
 "use client";
 import React from "react";
 import { useEffect, useRef, useState } from "react";
+import Lottie from "lottie-react"; 
 import styles from "./page.module.scss";
 import Logo2 from "../../public/assets/svgs/Logo2";
 import Lock from "../../public/assets/svgs/Lock";
 import gsap from "gsap";
 import BrownBg from "../../public/assets/svgs/BrownBg";
 import Customers from "../../public/assets/images/customers.png";
+import ClientLeafAnimation from "../../public/assets/ClientLeafAnimation.json";
 import Image from "next/image";
 
 const page = () => {
@@ -41,174 +43,229 @@ const page = () => {
     return () => tl.kill();
   }, []);
 
-  const headers = [
-    "Sent",
-    "Viewed",
-    "Replies",
-    "Hires",
-    "View Rate",
-    "Reply Rate",
-    "Connects",
-  ];
-
-  // Initial data
-  const initialRows = [
-    [20, 13, 10, 6, "75%", "97%", 200],
-    [20, 13, 10, 6, "75%", "97%", 200],
-    [20, 13, 10, 6, "75%", "97%", 200],
-    [20, 13, 10, 6, "75%", "97%", 200],
-    [20, 13, 10, 6, "75%", "97%", 200],
-    [20, 13, 10, 6, "75%", "97%", 200],
-    [20, 13, 10, 6, "75%", "97%", 200],
-    [20, 13, 10, 6, "75%", "97%", 200],
-    [20, 13, 10, 6, "75%", "97%", 200],
-    [20, 13, 10, 6, "75%", "97%", 200],
-    [20, 13, 10, 6, "75%", "97%", 200],
-    [20, 13, 10, 6, "75%", "97%", 200],
-    [20, 13, 10, 6, "75%", "97%", 200],
-    [20, 13, 10, 6, "75%", "97%", 200],
-    [20, 13, 10, 6, "75%", "97%", 200],
-    [20, 13, 10, 6, "75%", "97%", 200],
-    [20, 13, 10, 6, "75%", "97%", 200],
-    [20, 13, 10, 6, "75%", "97%", 200],
-  ];
-
-  // Target values for smooth updates
-  const targetRows = [
-    [45, 28, 18, 12, "82%", "94%", 320],
-    [38, 22, 15, 9, "79%", "91%", 280],
-    [42, 25, 16, 11, "81%", "93%", 310],
-  ];
-
-  const stats = [
-    {
-      title: "Connects Spent",
-      value: "435",
-      percent: "+75%",
-      positive: true,
-    },
-    {
-      title: "No. of Interviews",
-      value: "280",
-      percent: "+145%",
-      positive: true,
-    },
-    {
-      title: "View Rate",
-      value: "38%",
-      percent: "+75%",
-      positive: true,
-    },
-    {
-      title: "Client Acquisition Cost",
-      value: "$25",
-      percent: "-66%",
-      positive: true,
-    },
-  ];
-
-  const [mounted, setMounted] = useState(false);
-  const [rows, setRows] = useState(initialRows);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const animationRef = useRef(null);
-
-  // Function to animate number values
-  const animateValue = (start, end, duration, setter, rowIndex, colIndex) => {
-    const startTime = performance.now();
-    const startValue =
-      typeof start === "string" ? parseInt(start.replace("%", "")) : start;
-    const endValue =
-      typeof end === "string" ? parseInt(end.replace("%", "")) : end;
-    const isPercentage = typeof start === "string" && start.includes("%");
-
-    const updateValue = (currentTime) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-
-      // Easing function for smooth animation
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-
-      const currentValue = startValue + (endValue - startValue) * easeOutQuart;
-
-      setter((prev) => {
-        const newRows = [...prev];
-        const formattedValue = isPercentage
-          ? `${Math.round(currentValue)}%`
-          : Math.round(currentValue);
-        newRows[rowIndex][colIndex] = formattedValue;
-        return newRows;
-      });
-
-      if (progress < 1) {
-        animationRef.current = requestAnimationFrame(updateValue);
-      } else {
-        // After reaching target, start reverse animation
-        setTimeout(() => {
-          animateValue(end, start, duration, setter, rowIndex, colIndex);
-        }, 2000); // Wait 2 seconds before reversing
-      }
-    };
-
-    animationRef.current = requestAnimationFrame(updateValue);
-  };
-
   return (
-    <main className={styles.hero}>
-      <section className={styles.heroInner}>
-        {/* LEFT */}
-        <div className={styles.left}>
-          <div className={styles.overlayLayer}></div>
-          <div className={styles.reportTable}>
+    <main className={styles.main}>
+      <section className={styles.heroSection}>
+        <div className={styles.heroLeft}>
+          <div className={styles.topFadeOverlay}></div>
+          <div className={styles.performanceReport}>
             <h3>Daily Performance Report</h3>
 
-            <div className={styles.tableWrapper}>
-              <table className={styles.table}>
+            <div className={styles.reportTableWrapper}>
+              <table className={styles.reportTable}>
                 <thead>
                   <tr>
-                    {headers.map((head, index) => (
-                      <th
-                        key={head}
-                        className={index === 0 ? styles.colOne : undefined}
-                      >
-                        {head}
-                      </th>
-                    ))}
+                    <th className={styles.firstColumn}>Sent</th>
+                    <th>Viewed</th>
+                    <th>Replies</th>
+                    <th>Hires</th>
+                    <th>View Rate</th>
+                    <th>Reply Rate</th>
+                    <th>Connects</th>
                   </tr>
                 </thead>
 
                 <tbody>
-                  {rows.map((row, i) => (
-                    <tr key={i}>
-                      {row.map((cell, j) => (
-                        <td
-                          key={j}
-                          className={j === 0 ? styles.colOne : undefined}
-                        >
-                          {cell}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
+                  <tr>
+                    <td className={styles.firstColumn}>20</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>75%</td>
+                    <td>97%</td>
+                    <td>200</td>
+                  </tr>
+
+                  <tr>
+                    <td className={styles.firstColumn}>20</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>75%</td>
+                    <td>97%</td>
+                    <td>200</td>
+                  </tr>
+
+                  <tr>
+                    <td className={styles.firstColumn}>20</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>75%</td>
+                    <td>97%</td>
+                    <td>200</td>
+                  </tr>
+
+                  <tr>
+                    <td className={styles.firstColumn}>20</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>75%</td>
+                    <td>97%</td>
+                    <td>200</td>
+                  </tr>
+
+                  <tr>
+                    <td className={styles.firstColumn}>20</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>75%</td>
+                    <td>97%</td>
+                    <td>200</td>
+                  </tr>
+
+                  <tr>
+                    <td className={styles.firstColumn}>20</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>75%</td>
+                    <td>97%</td>
+                    <td>200</td>
+                  </tr>
+
+                  <tr>
+                    <td className={styles.firstColumn}>20</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>75%</td>
+                    <td>97%</td>
+                    <td>200</td>
+                  </tr>
+
+                  <tr>
+                    <td className={styles.firstColumn}>20</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>75%</td>
+                    <td>97%</td>
+                    <td>200</td>
+                  </tr>
+
+                  <tr>
+                    <td className={styles.firstColumn}>20</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>75%</td>
+                    <td>97%</td>
+                    <td>200</td>
+                  </tr>
+
+                  <tr>
+                    <td className={styles.firstColumn}>20</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>75%</td>
+                    <td>97%</td>
+                    <td>200</td>
+                  </tr>
+
+                  <tr>
+                    <td className={styles.firstColumn}>20</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>75%</td>
+                    <td>97%</td>
+                    <td>200</td>
+                  </tr>
+
+                  <tr>
+                    <td className={styles.firstColumn}>20</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>75%</td>
+                    <td>97%</td>
+                    <td>200</td>
+                  </tr>
+
+                  <tr>
+                    <td className={styles.firstColumn}>20</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>75%</td>
+                    <td>97%</td>
+                    <td>200</td>
+                  </tr>
+
+                  <tr>
+                    <td className={styles.firstColumn}>20</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>75%</td>
+                    <td>97%</td>
+                    <td>200</td>
+                  </tr>
+
+                  <tr>
+                    <td className={styles.firstColumn}>20</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>75%</td>
+                    <td>97%</td>
+                    <td>200</td>
+                  </tr>
+
+                  <tr>
+                    <td className={styles.firstColumn}>20</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>75%</td>
+                    <td>97%</td>
+                    <td>200</td>
+                  </tr>
+
+                  <tr>
+                    <td className={styles.firstColumn}>20</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>75%</td>
+                    <td>97%</td>
+                    <td>200</td>
+                  </tr>
+
+                  <tr>
+                    <td className={styles.firstColumn}>20</td>
+                    <td>13</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>75%</td>
+                    <td>97%</td>
+                    <td>200</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
           </div>
 
-          <img
+          {/* <img
             src="/assets/images/ClientLeaf-lottie.png"
-            className={styles.temp3}
-          ></img>
+            alt="ClientLeaf animation"
+          /> */}
+          <Lottie animationData={ClientLeafAnimation} />
 
-          <p className={styles.gradientText}>
+          <p className={styles.headlineText}>
             Sick of{" "}
-            <span className={styles.wordWrapper}>
-              <span className={styles.words} ref={wordsRef}>
-                <span className={styles.problem}>
+            <span className={styles.animatedWordMask}>
+              <span className={styles.animatedWords} ref={wordsRef}>
+                <span className={styles.animatedWord}>
                   Quality or Quantity Paradox,
                 </span>
-                <span className={styles.problem}>Endless Revisions,</span>
-                <span className={styles.problem}>Missed Deadlines,</span>
-                <span className={styles.problem}>
+                <span className={styles.animatedWord}>Endless Revisions,</span>
+                <span className={styles.animatedWord}>Missed Deadlines,</span>
+                <span className={styles.animatedWord}>
                   Quality or Quantity Paradox,
                 </span>
               </span>
@@ -219,17 +276,16 @@ const page = () => {
             We were too!
             <br></br>
             And that’s why we built{" "}
-            <span className={styles.brownGrad}> ClientLeaf™</span>
+            <span className={styles.highlightBrand}> ClientLeaf™</span>
           </p>
         </div>
 
-        {/* RIGHT CARD */}
-        <div className={styles.card}>
-          <div className={styles.brownbg}>
+        <div className={styles.ctaCard}>
+          <div className={styles.cardBackground}>
             <BrownBg />
           </div>
 
-          <div className={styles.logo}>
+          <div className={styles.brandLogo}>
             <Logo2 />
           </div>
 
@@ -239,14 +295,19 @@ const page = () => {
             {""} of 95% of UpWorkers.
           </h1>
 
-          <div className={styles.avatars}>
-            <Image src={Customers} width={120} height={40} alt="profiles" />
+          <div className={styles.socialProof}>
+            <Image
+              src={Customers}
+              width={120}
+              height={40}
+              alt="customer profiles"
+            />
 
             <span>+23 More Already Joined</span>
           </div>
 
           <button
-            className={`${styles.cta} ${styles.brownbtn}`}
+            className={`${styles.primaryButton} ${styles.glassButton}`}
             onClick={() =>
               window.open(
                 "https://forms.clickup.com/36179363/f/12g3d3-5838/CDYNB7UKBCG90MHXWW",
@@ -257,7 +318,7 @@ const page = () => {
             <Lock fill="#ffffffe3" /> Request Early Access
           </button>
 
-          <small className={styles.footer}>
+          <small className={styles.cardFooter}>
             © 2026 ClientLeaf. All rights reserved.
           </small>
         </div>

@@ -1,21 +1,17 @@
-$wood: #F0BB78;
-$beige:#F5ECD5;
-$dark-green: #626F47;
-$light-green: #A4B465;
-$dark-theme:#020617;
+$primary: #FF6F00;
 
 
 $white: #ffffff;
 $black: #000000;
 
 $white1: rgba(255, 255, 255, 0.1);
-$white2: rgba(134, 24, 24, 0.2);
+$white2: rgba(255, 255, 255, 0.02);
 $white3: rgba(255, 255, 255, 0.3);
 $white4: rgba(255, 255, 255, 0.4);
 $white5: rgba(255, 255, 255, 0.5);
 $white6: rgba(255, 255, 255, 0.6);
 $white7: rgba(255, 255, 255, 0.7);
-$white8: rgba(255, 255, 255, 0.8);
+$white8: rgba(255, 255, 255, 0.08);
 $white9: rgba(255, 255, 255, 0.9);
 
 
@@ -85,3 +81,65 @@ $blue-700: #1D4ED8;
 $blue-800: #1E40AF;
 $blue-900: #1E3A8A;
 $blue-950: #172554;
+
+$bg-dashboard: $gray-950;
+$bg-transparent-linear: linear-gradient(180deg, $white4 0%, $white8 100%);
+$bg-transparent-solid: $white4;
+$bg-card: $white2;
+$border-color: $white8;
+$primary-gradient: linear-gradient(270deg, rgba(255, 111, 0, 0.9) 11.93%, $white9 100%);
+ 
+
+$heading-1-size: 2.6rem;
+$heading-1-line-height: 150%;
+$heading-1-letter-spacing: 0;
+$heading-1-weight: 500;
+
+$heading-2-size: 2.4rem;
+$heading-2-line-height: 150%;
+$heading-2-letter-spacing: 0;
+$heading-2-weight: 500;
+
+$heading-3-size: 2.2rem;
+$heading-3-line-height: 150%;
+$heading-3-letter-spacing: 0;
+$heading-3-weight: 500;
+
+$heading-4-size: 2rem;
+$heading-4-line-height: 150%;
+$heading-4-letter-spacing: 0;
+$heading-4-weight: 500;
+
+$heading-5-size: 1.8rem;
+$heading-5-line-height: 150%;
+$heading-5-letter-spacing: 0;
+$heading-5-weight: 500;
+
+$heading-6-size: 1.6rem;
+$heading-6-line-height: 150%;
+$heading-6-letter-spacing: 0;
+$heading-6-weight: 500;
+
+$paragraph-1-size: 1.4rem;
+$paragraph-1-line-height: 150%;
+$paragraph-1-letter-spacing: 0;
+$paragraph-1-weight: 400;
+
+$space-0: 0;
+$space-1: 1rem;      // 10px
+$space-1-5: 1.5rem;  // 15px
+$space-2: 2rem;      // 20px
+$space-2-5: 2.5rem;      // 25px
+$space-3: 3rem;      // 30px
+$space-3-5: 3.5rem;  // 35px
+$space-4: 4rem;      // 40px
+$space-5: 5rem;      // 50px
+$space-6: 6rem;      // 60px
+$space-8: 8rem;      // 80px
+$space-10: 10rem;    // 100px
+$space-12: 12rem;    // 120px
+$space-16: 16rem;    // 160px
+$space-20: 20rem;    // 200px
+$space-24: 24rem;    // 240px
+$space-32: 32rem;    // 320px
+

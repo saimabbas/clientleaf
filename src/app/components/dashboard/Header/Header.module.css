@@ -1,0 +1,9 @@
+.header {
+  width: 100%;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 2rem;
+}
+.header .module {
+  gap: 1.5rem;
+}/*# sourceMappingURL=Header.module.css.map */

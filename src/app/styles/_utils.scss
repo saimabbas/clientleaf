@@ -1,0 +1,101 @@
+@use "./variables" as *;
+
+.h1 {
+  font-size: $heading-1-size;
+  line-height: $heading-1-line-height;
+  font-weight: $heading-1-weight;
+  letter-spacing: $heading-1-letter-spacing;
+  color: $white;
+
+}
+.h2 {
+  font-size: $heading-2-size;
+  line-height: $heading-2-line-height;
+  font-weight: $heading-2-weight;
+  letter-spacing: $heading-2-letter-spacing;
+  color: $gray-200
+}
+.h3 {
+  font-size: $heading-3-size;
+  line-height: $heading-3-line-height;
+  font-weight: $heading-3-weight;
+  letter-spacing: $heading-3-letter-spacing;
+}
+.h4 {
+  font-size: $heading-4-size;
+  line-height: $heading-4-line-height;
+  font-weight: $heading-4-weight;
+  letter-spacing: $heading-4-letter-spacing;
+}
+.h5 {
+  font-size: $heading-5-size;
+  line-height: $heading-5-line-height;
+  font-weight: $heading-5-weight;
+  letter-spacing: $heading-5-letter-spacing;
+
+  &.medium {
+    color: $gray-100;
+  }
+}
+.h6 {
+  font-size: $heading-6-size;
+  // line-height: $heading-6-line-height;
+  font-weight: $heading-6-weight;
+  letter-spacing: $heading-6-letter-spacing;
+  color: $gray-400;
+
+  &.highlight {
+    color: $gray-200
+  }
+}
+
+.p1 {
+    font-size: $paragraph-1-size;
+  line-height: $paragraph-1-line-height;
+  font-weight: $paragraph-1-weight;
+  letter-spacing: $paragraph-1-letter-spacing;
+  color: $gray-100;
+}
+
+.p1Bold {
+    font-size: $paragraph-1-size;
+  line-height: $paragraph-1-line-height;
+  font-weight: 600;
+  letter-spacing: $paragraph-1-letter-spacing;
+  color: $gray-100;
+}
+
+.border {
+    border: 1px solid $border-color;
+}
+
+.flexCol {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.flexJustify {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card {
+    background: $bg-card;
+    padding: $space-10;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: $border-color;
+}
