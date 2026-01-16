@@ -303,7 +303,7 @@ const page = () => {
               alt="customer profiles"
             />
 
-            <span>+23 More Already Joined</span>
+            <span>+14 Agencies Already Joined</span>
           </div>
 
           <button
