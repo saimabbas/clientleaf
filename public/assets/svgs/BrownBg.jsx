@@ -22,7 +22,7 @@ const BrownBg = () => {
     tl.to(
       { progress: 0 },
       {
-        duration: 25, // total loop duration
+        duration: 10, // total loop duration
         progress: 1,
         ease: "sine.inOut",
         onUpdate: function () {
