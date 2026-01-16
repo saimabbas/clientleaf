@@ -242,7 +242,7 @@ const page = () => {
           <div className={styles.avatars}>
             <Image src={Customers} width={120} height={40} alt="profiles" />
 
-            <span>+23 More Already Joined</span>
+            <span>+14 Agencies Already Joined</span>
           </div>
 
           <button
