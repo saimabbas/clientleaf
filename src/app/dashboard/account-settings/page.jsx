@@ -1,5 +1,7 @@
 export default function AccountSettings() {
     return (
-        <div></div>
+        <div>
+            <h2 className="h2">Account Settings</h2>
+        </div>
     )
 }

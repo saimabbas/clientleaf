@@ -1,5 +1,12 @@
-import { Manrope } from "next/font/google";
+import { Manrope, Quicksand } from "next/font/google";
 import "./styles/globals.scss";
+
+const quicksand = Quicksand({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-quicksand",
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -8,7 +15,7 @@ const manrope = Manrope({
   display: "swap",
 });
 
-// ✅ move viewport/themeColor/colorScheme here
+// move viewport/themeColor/colorScheme here
 export const viewport = {
   width: "device-width",
   initialScale: 1,
@@ -36,10 +43,6 @@ export const metadata = {
     },
   },
 
-  // ❌ remove these from metadata:
-  // viewport: {...}
-  // themeColor: ...
-  // colorScheme: ...
 
   metadataBase: new URL("https://clientleaf.com"),
   alternates: {
@@ -107,7 +110,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable}`}>{children}</body>
+      <body className={`${manrope.variable} ${quicksand.variable}`}>{children}</body>
     </html>
   );
 }

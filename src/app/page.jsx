@@ -9,6 +9,7 @@ import gsap from "gsap";
 import BrownBg from "../../public/assets/svgs/BrownBg";
 import Customers from "../../public/assets/images/customers.png";
 import ClientLeafAnimation from "../../public/assets/ClientLeafAnimation.json";
+import final from "../../public/assets/final.json";
 import Image from "next/image";
 
 const page = () => {
@@ -254,7 +255,7 @@ const page = () => {
             src="/assets/images/ClientLeaf-lottie.png"
             alt="ClientLeaf animation"
           /> */}
-          <Lottie animationData={ClientLeafAnimation} />
+          <Lottie animationData={final} />
 
           <p className={styles.headlineText}>
             Sick of{" "}

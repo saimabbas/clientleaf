@@ -1,1 +1,160 @@
-/*# sourceMappingURL=page.module.css.map */
+.activeJob {
+  width: 100%;
+  gap: 3.5rem;
+}
+.activeJob .jobContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2.35fr 1fr;
+  gap: 2.5rem;
+  border-radius: 25px;
+}
+.activeJob .jobContainer .jobInfo {
+  width: 100%;
+  gap: 3.5rem;
+}
+.activeJob .jobContainer .jobInfo .jobPosted {
+  width: 100%;
+  gap: 2.5rem;
+}
+.activeJob .jobContainer .jobInfo .jobPosted .jobHeader {
+  width: 100%;
+  gap: 1rem;
+}
+.activeJob .jobContainer .jobInfo .jobPosted .jobHeader .jobTitle {
+  gap: 1rem;
+}
+.activeJob .jobContainer .jobInfo .jobPosted .jobHeader .jobTitle span {
+  width: 30px;
+  height: 30px;
+  border-radius: 1000px;
+  background: linear-gradient(180deg, #3f8725 0%, #0f2109 100%);
+}
+.activeJob .jobContainer .jobInfo .jobPosted .jobHeader .jobActions {
+  gap: 2.5rem;
+}
+.activeJob .jobContainer .jobInfo .jobPosted .jobHeader .jobActions .ActionItems {
+  gap: 1rem;
+  cursor: pointer;
+}
+.activeJob .jobContainer .jobInfo .jobPosted .jobHeader .jobActions .ActionItems span {
+  width: 48px;
+  height: 48px;
+  border-radius: 1000px;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+.activeJob .jobContainer .jobInfo .jobPosted .skills {
+  width: 100%;
+  gap: 1.5rem;
+}
+.activeJob .jobContainer .jobInfo .jobPosted .skills .chip {
+  padding: 1.3rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 1000px;
+}
+.activeJob .jobContainer .jobDetails {
+  width: 100%;
+  border-radius: 15px;
+  gap: 2.5rem;
+}
+.activeJob .jobContainer .jobDetails .jobDetailsContent {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+.activeJob .jobContainer .jobDetails .jobDetailsContent .jobDetailsItem {
+  width: 100%;
+  gap: 2.5rem;
+}
+.activeJob .jobContainer .jobQuestions {
+  width: 100%;
+  gap: 2.5rem;
+}
+.activeJob .jobContainer .jobQuestions ol {
+  gap: 1.5rem;
+  padding-left: 2rem;
+}
+.activeJob .clientContainer {
+  width: 100%;
+  height: -moz-max-content;
+  height: max-content;
+  gap: 3.5rem;
+  border-radius: 25px;
+}
+.activeJob .clientContainer .clientInfo {
+  width: 100%;
+  gap: 2rem;
+}
+.activeJob .clientContainer .clientInfo .clientInfoContent {
+  width: 100%;
+  gap: 2.5rem;
+}
+.activeJob .clientContainer .clientInfo .clientInfoContent .clientInfoItem {
+  width: 100%;
+  gap: 1rem;
+}
+.activeJob .clientContainer .clientInfo .clientInfoContent .clientInfoItem.hours {
+  align-items: flex-start !important;
+}
+.activeJob .clientContainer .clientInfo .clientInfoContent .clientInfoItem span {
+  width: 25px;
+  height: 25px;
+  border-radius: 1000px;
+  background-color: rgba(255, 255, 255, 0.02);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.activeJob .clientContainer .clientInfo .clientInfoContent .clientInfoItem span .glow {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  width: 23px;
+  height: 25px;
+  background: linear-gradient(121.93deg, #ff6f00 19.19%, #ffffff 133.67%);
+  filter: blur(7px);
+  transform: rotate(-135deg);
+}
+.activeJob .clientContainer .clientInfo .clientInfoContent .clientInfoItem .stars {
+  gap: 0.5rem;
+}
+.activeJob .clientContainer .clientInfo .clientInfoContent .clientInfoItem h6 {
+  position: relative;
+  z-index: 1;
+}
+.activeJob .clientContainer .clientInfo .clientInfoContent .clientInfoItem .clientInfoText {
+  gap: 1rem;
+}
+.activeJob .clientContainer .buttons {
+  width: 100%;
+  gap: 1.5rem;
+}
+.activeJob .clientContainer .buttons .transparentBtn {
+  width: 100%;
+  border-radius: 1000px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.08) 100%);
+  border: none;
+  outline: none;
+  padding: 1.5rem;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.activeJob .clientContainer .buttons .transparentBtn .btnGradient {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+.activeJob .clientContainer .buttons .transparentBtn .btnGradient svg {
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=page.module.css.map */

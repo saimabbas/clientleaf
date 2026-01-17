@@ -1,19 +1,34 @@
 @use "./variables" as *;
 
+.font-quicksand {
+  font-family:
+    var(--font-quicksand),
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
 .h1 {
   font-size: $heading-1-size;
   line-height: $heading-1-line-height;
   font-weight: $heading-1-weight;
   letter-spacing: $heading-1-letter-spacing;
   color: $white;
-
 }
 .h2 {
   font-size: $heading-2-size;
   line-height: $heading-2-line-height;
   font-weight: $heading-2-weight;
   letter-spacing: $heading-2-letter-spacing;
-  color: $gray-200
+  color: $gray-200;
 }
 .h3 {
   font-size: $heading-3-size;
@@ -43,14 +58,27 @@
   font-weight: $heading-6-weight;
   letter-spacing: $heading-6-letter-spacing;
   color: $gray-400;
+  font-family:
+    var(--font-quicksand),
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 
   &.highlight {
-    color: $gray-200
+    color: $gray-200;
   }
 }
 
 .p1 {
-    font-size: $paragraph-1-size;
+  font-size: $paragraph-1-size;
   line-height: $paragraph-1-line-height;
   font-weight: $paragraph-1-weight;
   letter-spacing: $paragraph-1-letter-spacing;
@@ -58,7 +86,7 @@
 }
 
 .p1Bold {
-    font-size: $paragraph-1-size;
+  font-size: $paragraph-1-size;
   line-height: $paragraph-1-line-height;
   font-weight: 600;
   letter-spacing: $paragraph-1-letter-spacing;
@@ -66,21 +94,27 @@
 }
 
 .border {
-    border: 1px solid $border-color;
+  border: 1px solid $border-color;
 }
 
 .flexCol {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .flexRow {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .flexJustify {
@@ -89,13 +123,29 @@
   justify-content: space-between;
 }
 
+.flexWrap {
+  flex-wrap: wrap;
+}
+
 .card {
-    background: $bg-card;
-    padding: $space-10;
+  background: $bg-card;
+  padding: $space-2-5;
 }
 
 .divider {
   width: 100%;
   height: 1px;
   background-color: $border-color;
+}
+
+.gradientText {
+  background: linear-gradient(
+    270deg,
+    rgba(255, 111, 0, 0.9) 11.93%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
