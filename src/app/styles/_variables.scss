@@ -5,6 +5,7 @@ $white: #ffffff;
 $black: #000000;
 
 $white1: rgba(255, 255, 255, 0.1);
+$white1-5: rgba(255, 255, 255, 0.15);
 $white2: rgba(255, 255, 255, 0.02);
 $white3: rgba(255, 255, 255, 0.3);
 $white4: rgba(255, 255, 255, 0.04);
@@ -40,7 +41,7 @@ $gray-50: #f9fafb;
 $gray-100: #f3f4f6;
 $gray-200: #e5e7eb;
 $gray-300: #d1d5db;
-$gray-400: #9ca3af;
+$gray-400: #6b7280;
 $gray-500: #6b7280;
 $gray-600: #4b5563;
 $gray-700: #374151;
@@ -81,6 +82,15 @@ $blue-700: #1D4ED8;
 $blue-800: #1E40AF;
 $blue-900: #1E3A8A;
 $blue-950: #172554;
+
+
+$emerald-300: #6EE7B7;
+$emerald-400: #34D399;
+$emerald-500: #10B981;
+$emerald-600: #059669;
+$amber-400: #FBBF24;
+$rose-300: #FDA4AF;
+$rose-600: #E11D48;
 
 $bg-dashboard: $gray-950;
 $bg-transparent-linear: linear-gradient(180deg, $white4 0%, $white8 100%);
@@ -126,6 +136,12 @@ $paragraph-1-size: 1.4rem;
 $paragraph-1-line-height: 150%;
 $paragraph-1-letter-spacing: 0;
 $paragraph-1-weight: 400;
+
+$paragraph-2-size: 1.2rem;
+$paragraph-2-line-height: 150%;
+$paragraph-2-letter-spacing: 0;
+$paragraph-2-weight: 500;
+
 
 $space-0: 0;
 $space-0-5: 0.5rem;

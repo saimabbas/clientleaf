@@ -3,13 +3,14 @@
 .sidebar {
   width: 100%;
   height: calc(100vh - 35px);
+  // height: max-content;
   border-radius: 25px;
   background: $bg-card;
   position: relative;
   z-index: 1;
   overflow: hidden;
-  gap: 2.5rem;
-  padding: 2.5rem;
+  gap: 5rem;
+  padding-block: 2.5rem;
 
   .Bg {
     width: 100%;
@@ -35,22 +36,132 @@
     }
   }
 
-  .navContainer {
+  .topContainer {
     width: 100%;
-    gap: 1.25rem;
+    gap: 2.5rem;
 
-    .navCategory {
+    h1 {
+      padding-inline: 2.5rem;
+    }
+
+    .navContainer {
       width: 100%;
-      gap: 1.25rem;
-      .navItem {
+      gap: 1.5rem;
+      height: calc(100vh - 140px);
+      overflow-y: scroll;
+      padding-inline: 2.5rem;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        display: none;
+      }
+
+      .navCategory {
         width: 100%;
-        gap: $space-1;
-        cursor: pointer;
-        svg {
-          width: 18px;
-          height: 18px;
+        gap: 1.5rem;
+
+        .category {
+          width: 100%;
+          gap: 1rem;
+          cursor: pointer;
+          p {
+            color: $gray-400;
+            transition: all 0.3s ease;
+
+            &.expandedText {
+              color: $gray-200;
+            }
+          }
+
+          &:hover {
+            .arrowIcon svg path {
+              stroke: rgba(243, 244, 246, 0.45);
+            }
+          }
+        }
+
+     
+
+        .arrowIcon {
+          transition: transform 0.3s ease;
+
+          &.expanded {
+            transform: rotate(0deg);
+
+            svg path {
+              stroke: $white;
+            }
+          }
+
+          &:not(.expanded) {
+            transform: rotate(180deg);
+          }
+
+          svg path {
+            transition: stroke 0.3s ease;
+          }
+        }
+
+        .categoryItems {
+          gap: 1rem;
+          transition: all 0.3s ease;
+          overflow: hidden;
+
+          &.expanded {
+            opacity: 1;
+            max-height: 500px;
+            display: flex;
+          }
+
+          &:not(.expanded) {
+            opacity: 0;
+            max-height: 0;
+            display: none;
+          }
+        }
+
+        .navItem {
+          width: 100%;
+          gap: $space-1;
+          cursor: pointer;
+
+          svg {
+            width: 18px;
+            height: 18px;
+            transition: fill 0.3s ease;
+          }
+
+          > svg path {
+            stroke: $gray-200;
+            opacity: 0.5;
+          }
+
+          &.active {
+            color: $white;
+          }
+
+          h6 {
+            color: $gray-200;
+            opacity: 0.5;
+          }
         }
       }
+    }
+  }
+
+  .bottomWrapper {
+    width: 100%;
+    height: 100px;
+    padding-inline: 2.5rem;
+
+    .container {
+      width: 100%;
+      height: 100px;
+      border-radius: 25px;
+      background-color: $white1-5;
     }
   }
 }

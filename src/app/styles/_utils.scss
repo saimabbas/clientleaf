@@ -21,7 +21,7 @@
   line-height: $heading-1-line-height;
   font-weight: $heading-1-weight;
   letter-spacing: $heading-1-letter-spacing;
-  color: $white;
+  color: $gray-200;
 }
 .h2 {
   font-size: $heading-2-size;
@@ -49,7 +49,7 @@
   letter-spacing: $heading-5-letter-spacing;
 
   &.medium {
-    color: $gray-100;
+    color: $gray-200;
   }
 }
 .h6 {
@@ -82,7 +82,7 @@
   line-height: $paragraph-1-line-height;
   font-weight: $paragraph-1-weight;
   letter-spacing: $paragraph-1-letter-spacing;
-  color: $gray-100;
+  color: $gray-200;
 }
 
 .p1Bold {
@@ -90,7 +90,15 @@
   line-height: $paragraph-1-line-height;
   font-weight: 600;
   letter-spacing: $paragraph-1-letter-spacing;
-  color: $gray-100;
+  color: $gray-200;
+}
+
+.p2 {
+  font-size: $paragraph-2-size;
+  line-height: $paragraph-2-line-height;
+  font-weight: $paragraph-2-weight;
+  letter-spacing: $paragraph-2-letter-spacing;
+  color: $gray-500;
 }
 
 .border {
@@ -120,6 +128,12 @@
 .flexJustify {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.flexJustifyStart {
+  display: flex;
+  align-items: flex-start;
   justify-content: space-between;
 }
 

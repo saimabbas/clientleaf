@@ -1,9 +1,10 @@
+import UpworkLogo from "@/app/components/ui/UpworkLogo/UpworkLogo";
 import BrifeCase from "../../../../public/assets/svgs/Brifecase";
 import ButtonGradient from "../../../../public/assets/svgs/ButtonGradient";
 import Dislike from "../../../../public/assets/svgs/Dislike";
 import Dollar from "../../../../public/assets/svgs/Dollar";
 import Like from "../../../../public/assets/svgs/Like";
-import Link from "../../../../public/assets/svgs/Link";
+import Link from "../../../../public/assets/svgs/LinkIcon";
 import Share from "../../../../public/assets/svgs/Share";
 import Star from "../../../../public/assets/svgs/Star";
 import Upwork from "../../../../public/assets/svgs/Upwork";
@@ -20,9 +21,7 @@ export default function ActiveJobs() {
           <div className={`${styles.jobPosted} flexCol`}>
             <div className={`${styles.jobHeader} flexJustify flexWrap`}>
               <div className={`${styles.jobTitle} flexRow`}>
-                <span className="flexCenter">
-                  <Upwork />
-                </span>
+               <UpworkLogo />
                 <h2 className="h2">Edit App Promotional Video</h2>
               </div>
               <div className={`${styles.jobActions} flexRow`}>
