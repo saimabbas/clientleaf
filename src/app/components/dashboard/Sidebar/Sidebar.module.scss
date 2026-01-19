@@ -2,14 +2,14 @@
 
 .sidebar {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 35px);
   border-radius: 25px;
   background: $bg-card;
   position: relative;
   z-index: 1;
   overflow: hidden;
-  gap: $space-5;
-  padding: $space-3 $space-2-5;
+  gap: 2.5rem;
+  padding: 2.5rem;
 
   .Bg {
     width: 100%;
@@ -37,16 +37,19 @@
 
   .navContainer {
     width: 100%;
-    gap: $space-2;
+    gap: 1.25rem;
 
     .navCategory {
       width: 100%;
-      gap: $space-2;
-
+      gap: 1.25rem;
       .navItem {
         width: 100%;
         gap: $space-1;
         cursor: pointer;
+        svg {
+          width: 18px;
+          height: 18px;
+        }
       }
     }
   }

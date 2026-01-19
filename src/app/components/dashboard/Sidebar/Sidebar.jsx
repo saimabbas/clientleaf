@@ -82,7 +82,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import SidebarBottomBg from "../../../../../public/assets/svgs/SidebarBottomBg";
 import SidebarTopBg from "../../../../../public/assets/svgs/SidebarTopBg";
-import {iconMap} from "../Icons";
+import { iconMap } from "../Icons";
 import styles from "./Sidebar.module.css";
 import { navItems } from "@/app/config/navigation";
 import Link from "next/link";
@@ -107,37 +107,40 @@ export default function Sidebar() {
       <div className={`${styles.Bg} ${styles.bottom}`}>
         <SidebarBottomBg />
       </div>
-      
+
       <h1>ClientLeaf™</h1>
-      
+
       <div className={`${styles.navContainer} flexCol`}>
         {navItems.map((category, categoryIndex) => (
-          <div key={category.category} className={`${styles.navCategory} flexCol`}>
+          <div
+            key={category.category}
+            className={`${styles.navCategory} flexCol`}
+          >
             <p className="p1Bold">{category.category}</p>
-            
+
             {category.items.map((item, itemIndex) => {
               const IconComponent = iconMap[item.icon];
               const active = isActive(item.path);
-              
+
               return (
                 <Link
                   key={`${categoryIndex}-${itemIndex}`}
                   href={item.path}
-                  className={`${styles.navItem} flexRow ${active ? styles.active : ""}`}
+                  className={`${styles.navItem} flexRow ${
+                    active ? styles.active : ""
+                  }`}
                   onClick={(e) => {
                     e.preventDefault();
                     handleNavigation(item.path);
                   }}
                 >
-                  <div className={styles.iconWrapper}>
-                    {IconComponent && <IconComponent />}
-                  </div>
+                  {IconComponent && <IconComponent />}
                   <h6 className="h6">{item.name}</h6>
                   {active && <div className={styles.activeIndicator}></div>}
                 </Link>
               );
             })}
-            
+
             {categoryIndex < navItems.length - 1 && (
               <div className="divider"></div>
             )}

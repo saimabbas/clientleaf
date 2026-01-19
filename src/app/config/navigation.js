@@ -1,13 +1,18 @@
 export const navItems = [
   {
-    category: "Home",
+    category: "HOME",
     items: [
+      {
+        name: "Dashboard",
+        path: "/dashboard/dashboard",
+        icon: "Home",
+      },
       {
         name: "Analytics",
         path: "/dashboard/analytics",
-        icon: "Home"
-      }
-    ]
+        icon: "Home",
+      },
+    ],
   },
   {
     category: "JOBS",
@@ -15,19 +20,19 @@ export const navItems = [
       {
         name: "Active Jobs",
         path: "/dashboard/active-jobs",
-        icon: "Smile"
+        icon: "Smile",
       },
       {
         name: "Available Jobs",
         path: "/dashboard/available-jobs",
-        icon: "Smile"
+        icon: "Smile",
       },
       {
-        name: "Backlog",
-        path: "/dashboard/backlog",
-        icon: "Note"
-      }
-    ]
+        name: "Scanners",
+        path: "/dashboard/available-jobs",
+        icon: "Smile",
+      },
+    ],
   },
   {
     category: "PROPOSALS",
@@ -35,19 +40,14 @@ export const navItems = [
       {
         name: "Active Proposals",
         path: "/dashboard/active-proposals",
-        icon: "Proposal"
+        icon: "Proposal",
       },
       {
         name: "Templates",
         path: "/dashboard/templates",
-        icon: "Template"
+        icon: "Template",
       },
-      {
-        name: "Proposal Backlog",
-        path: "/dashboard/proposal-backlog",
-        icon: "Note"
-      }
-    ]
+    ],
   },
   {
     category: "SETTINGS",
@@ -55,13 +55,33 @@ export const navItems = [
       {
         name: "Account Settings",
         path: "/dashboard/account-settings",
-        icon: "Setting"
+        icon: "Setting",
       },
       {
         name: "Knowledge Base",
         path: "/dashboard/knowledge-base",
-        icon: "Sun"
-      }
-    ]
-  }
+        icon: "Sun",
+      },
+      {
+        name: "Backlog",
+        path: "/dashboard/backlog",
+        icon: "Note",
+      },
+    ],
+  },
+  {
+    category: "BILLING",
+    items: [
+      {
+        name: "Invoices",
+        path: "/dashboard/invoices",
+        icon: "Setting",
+      },
+      {
+        name: "Subscription Plan",
+        path: "/dashboard/subscription-plan",
+        icon: "Sun",
+      },
+    ],
+  },
 ];
