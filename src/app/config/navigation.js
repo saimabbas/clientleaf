@@ -29,7 +29,7 @@ export const navItems = [
       },
       {
         name: "Scanners",
-        path: "/dashboard/available-jobs",
+        path: "/dashboard/scanner",
         icon: "Smile",
       },
     ],

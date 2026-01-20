@@ -1,0 +1,23 @@
+@import "../../../../styles/variables";
+
+.ScannerForm {
+  width: 100%;
+  border-radius: 20px;
+  gap: 2.5rem;
+
+  .topHeader {
+    width: 100%;
+    gap: 1rem;
+
+    button {
+      width: max-content;
+      height: 40px;
+      padding: 0 2rem;
+      border-radius: 1000px;
+      background-color: $bg-transparent-solid;
+      border: none;
+      outline: none;
+    }
+  }
+
+}

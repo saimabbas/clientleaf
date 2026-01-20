@@ -1,0 +1,47 @@
+@import "../../../../../styles/variables";
+
+.checkboxContainer {
+  gap: 1.5rem;
+
+  .option {
+    position: relative;
+    gap: 1rem;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+
+    input[type="checkbox"] {
+      display: none; 
+    }
+
+    .customCheckbox {
+      width: 20px;
+      height: 20px;
+    //   border: 1px solid $border-color;
+    border: none;
+      border-radius: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $bg-transparent-solid;
+      transition: all 0.2s ease;
+
+      svg {
+        width: 10px;
+        height: 10px;
+        opacity: 0; 
+        transition: opacity 0.2s ease;
+      }
+    }
+
+    .checked {
+    //   background-color: ;
+    //   border-color: ;
+      
+      svg {
+        opacity: 1; 
+      }
+    }
+
+  }
+}

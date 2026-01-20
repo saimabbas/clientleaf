@@ -83,8 +83,6 @@
           }
         }
 
-     
-
         .arrowIcon {
           transition: transform 0.3s ease;
 
@@ -125,7 +123,7 @@
 
         .navItem {
           width: 100%;
-          gap: $space-1;
+          gap: 1rem;
           cursor: pointer;
 
           svg {

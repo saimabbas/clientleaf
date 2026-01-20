@@ -1,12 +1,12 @@
 @use "../../../styles/variables" as *;
 
 .header {
-    width: 100%;
-    gap: $space-1;
-    border-bottom: 1px solid $border-color;
-    padding-bottom: $space-2;
+  width: 100%;
+  gap: 1rem;
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 2rem;
 
-    .module {
-        gap: $space-1-5;
-    }
+  .module {
+    gap: 1.5rem;
+  }
 }

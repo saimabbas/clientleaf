@@ -1,0 +1,104 @@
+@import "../../../../../styles/variables";
+.inputSelectorContainer {
+  width: 100%;
+  gap: 1rem;
+  .inputSelector {
+    width: 100%;
+    background: $bg-transparent-solid;
+    border-radius: 10px;
+    padding-right: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    &:hover {
+    }
+    input {
+      width: 100%;
+      padding: 1.8rem 0 1.8rem 1.5rem;
+      background: transparent;
+      outline: none;
+      border: none;
+      border-radius: 10px;
+      &::placeholder {
+        font-size: 1.6rem;
+        color: $gray-500;
+        font-weight: 500;
+      }
+    }
+    .arrow {
+      svg {
+        transform: rotate(180deg);
+        transition: transform 0.3s ease;
+      }
+    }
+    &.rotated {
+      svg {
+        transform: rotate(0deg);
+      }
+    }
+
+  
+  }
+    .keywordContainer {
+        width: 100%;
+        gap: 1rem;
+
+        .keywordChip {
+            border-radius: 1000px;
+            background-color: $bg-transparent-solid;
+            padding: 0.75rem 1.5rem;
+            position: relative;
+            p {
+                font-weight: 500;
+            }
+            .crossIcon {
+                position: absolute;
+                justify-content: center;
+                top: 0;
+                right: 0;
+                width: 15px;
+                height: 15px;
+                border-radius: 1000px;
+                background-color: $white8;
+                cursor: pointer;
+            }
+        }
+    }
+  .dropdown {
+    width: 100%;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    right: 0;
+    background: $bg-transparent-solid;
+    border-radius: 12px;
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    border: none;
+    backdrop-filter: blur(20px);
+    // box-shadow: 0 4px 12px rgba(255, 255, 255, 0.075);
+  }
+  .option {
+    padding: 1.2rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1.6rem;
+    color: $gray-500;
+    border-bottom: 1px solid $border-color;
+    &:hover {
+      background: $bg-transparent-solid;
+      // color: $primary-color;
+    }
+    &.selected {
+      background: $bg-transparent-solid;
+      color: $gray-200;
+    }
+    &:first-child {
+      border-radius: 10px 10px 0 0;
+    }
+    &:last-child {
+      border-radius: 0 0 10px 10px;
+      border-bottom: none;
+    }
+  }
+}

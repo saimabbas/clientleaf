@@ -1,12 +1,7 @@
-
-                  .span {
-                    width: 30px;
-                    height: 30px;
-                    border-radius: 1000px;
-                    background: linear-gradient(
-                      180deg,
-                      #3f8725 0%,
-                      #0f2109 100%
-                    );
-                    flex-shrink: 0;
-                  }
+.span {
+  width: 30px;
+  height: 30px;
+  border-radius: 1000px;
+  background: linear-gradient(180deg, #3f8725 0%, #0f2109 100%);
+  flex-shrink: 0;
+}
