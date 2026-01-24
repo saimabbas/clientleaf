@@ -1,0 +1,20 @@
+.ScannerForm {
+  width: 100%;
+  border-radius: 20px;
+  gap: 2.5rem;
+}
+.ScannerForm .topHeader {
+  width: 100%;
+  gap: 1rem;
+}
+.ScannerForm .topHeader button {
+  cursor: pointer;
+  width: -moz-max-content;
+  width: max-content;
+  height: 40px;
+  padding: 0 2rem;
+  border-radius: 1000px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: none;
+  outline: none;
+}/*# sourceMappingURL=ScannerForm.module.css.map */

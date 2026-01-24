@@ -50,11 +50,12 @@
               padding-right: 1.5rem;
               input {
                 width: 100%;
-                padding: 1.8rem 0 1.8rem 1.5rem;
+                padding: 1.6rem 0 1.6rem 1.5rem;
                 background: transparent;
                 outline: none;
                 border: none;
                 border-radius: 10px;
+                min-height: 50px;
 
                 &::placeholder {
                   font-size: 1.6rem;

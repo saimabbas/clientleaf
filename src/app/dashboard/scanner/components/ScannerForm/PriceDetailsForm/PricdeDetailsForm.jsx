@@ -1,7 +1,6 @@
 "use client";
 import Selector from "@/app/components/ui/form/inputs/Selector/Selector";
 import styles from "./PricdeDetailsForm.module.scss";
-import KeywordSelector from "@/app/components/ui/form/inputs/KeywordSelector/KeywordSelector";
 import Checkbox from "@/app/components/ui/form/inputs/Checkbox/Checkbox";
 import TextInput from "@/app/components/ui/form/inputs/TextInput/TextInput";
 
@@ -9,9 +8,7 @@ const experienceLevel = [
   { value: "Intermediate", label: "Intermediate" },
   { value: "Expert", label: "Expert" },
 ];
-const proposals = [
-  { value: "5 to 10", label: "5 to 10" },
-];
+const proposals = [{ value: "5 to 10", label: "5 to 10" }];
 const hoursPerWeek = [
   {
     value: "More than 30 hours per week",
@@ -29,13 +26,9 @@ const hoursPerWeek = [
 
 const included = [{ value: "included", label: "included" }];
 
-export default function ClientDetailsForm() {
+export default function ClientDetailsForm({ isViewMode = false }) {
   const handleSelect = (selectedOption) => {
     console.log("Selected", selectedOption);
-  };
-
-  const handleKeywordsChange = (selected) => {
-    console.log("Selected keywords:", selected);
   };
 
   return (
@@ -50,6 +43,7 @@ export default function ClientDetailsForm() {
                 placeholder="Intermediate"
                 options={experienceLevel}
                 onSelect={handleSelect}
+                disabled={isViewMode}
               />
             </div>
             <div className={`${styles.inputContainer} flexCol`}>
@@ -58,6 +52,7 @@ export default function ClientDetailsForm() {
                 placeholder="5 to 10"
                 options={proposals}
                 onSelect={handleSelect}
+                disabled={isViewMode}
               />
             </div>
           </div>
@@ -66,16 +61,16 @@ export default function ClientDetailsForm() {
             <div className={`${styles.inputContainer} flexCol`}>
               <div className={`${styles.labelCheckbox} flexJustify`}>
                 <label className="p1 font-quicksand">Hourly Rate</label>
-                <Checkbox options={included} />
+                <Checkbox options={included} disabled={isViewMode} />
               </div>
               <div className={`${styles.priceGrid} flexRow`}>
                 <div className={`${styles.inputContainer} flexRow`}>
                   <label className="p1 font-quicksand">From</label>
-                     <TextInput placeholder="$15" />
+                  <TextInput placeholder="$15" disabled={isViewMode} />
                 </div>
                 <div className={`${styles.inputContainer} flexRow`}>
                   <label className="p1 font-quicksand">To</label>
-                  <TextInput placeholder="$25" />
+                  <TextInput placeholder="$25" disabled={isViewMode} />
                 </div>
               </div>
             </div>
@@ -85,6 +80,7 @@ export default function ClientDetailsForm() {
                 placeholder="More than 30 hours per week"
                 options={hoursPerWeek}
                 onSelect={handleSelect}
+                disabled={isViewMode}
               />
             </div>
           </div>
@@ -93,38 +89,28 @@ export default function ClientDetailsForm() {
             <div className={`${styles.inputContainer} flexCol`}>
               <div className={`${styles.labelCheckbox} flexJustify`}>
                 <label className="p1 font-quicksand">Fixed Price</label>
-                <Checkbox options={included} />
+                <Checkbox options={included} disabled={isViewMode} />
               </div>
               <div className={`${styles.priceGrid} flexRow`}>
                 <div className={`${styles.inputContainer} flexRow`}>
                   <label className="p1 font-quicksand">From</label>
-                  {/* <Selector
-                    placeholder="$1500"
-                    options={hoursPerWeek}
-                    onSelect={handleSelect}
-                  /> */}
-                   <TextInput placeholder="$1500" />
-               
+                  <TextInput placeholder="$1500" disabled={isViewMode} />
                 </div>
                 <div className={`${styles.inputContainer} flexRow`}>
                   <label className="p1 font-quicksand">To</label>
-                  {/* <Selector
-                    placeholder="$5000"
-                    options={hoursPerWeek}
-                    onSelect={handleSelect}
-                  /> */}
-                   <TextInput placeholder="$5000" />
+                  <TextInput placeholder="$5000" disabled={isViewMode} />
                 </div>
               </div>
             </div>
-            <div className={`${styles.inputContainer} ${styles.fullHeight} flexCol`}>
+            <div
+              className={`${styles.inputContainer} ${styles.fullHeight} flexCol`}
+            >
               <label className="p1 font-quicksand">
                 Projects without Budget Specification
               </label>
-              <Checkbox options={included} />
+              <Checkbox options={included} disabled={isViewMode} />
             </div>
           </div>
-
         </div>
       </div>
     </div>

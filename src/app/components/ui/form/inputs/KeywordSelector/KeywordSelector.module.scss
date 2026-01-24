@@ -2,18 +2,41 @@
 .inputSelectorContainer {
   width: 100%;
   gap: 1rem;
+
+  &.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &.disabled input {
+    cursor: not-allowed;
+  }
+
+  .disabledChip {
+    cursor: default;
+  }
   .inputSelector {
     width: 100%;
+    min-height: 50px;
+    max-height: 50px;
     background: $bg-transparent-solid;
     border-radius: 10px;
     padding-right: 1.5rem;
     cursor: pointer;
     position: relative;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+
     &:hover {
+      border-color: $white8;
     }
+
     input {
       width: 100%;
-      padding: 1.8rem 0 1.8rem 1.5rem;
+      min-height: 50px;
+      max-height: 50px;
+      padding: 1.6rem 0 1.6rem 1.5rem;
       background: transparent;
       outline: none;
       border: none;
@@ -35,34 +58,33 @@
         transform: rotate(0deg);
       }
     }
-
-  
   }
-    .keywordContainer {
-        width: 100%;
-        gap: 1rem;
+  .keywordContainer {
+    width: 100%;
+    gap: 1rem;
 
-        .keywordChip {
-            border-radius: 1000px;
-            background-color: $bg-transparent-solid;
-            padding: 0.75rem 1.5rem;
-            position: relative;
-            p {
-                font-weight: 500;
-            }
-            .crossIcon {
-                position: absolute;
-                justify-content: center;
-                top: 0;
-                right: 0;
-                width: 15px;
-                height: 15px;
-                border-radius: 1000px;
-                background-color: $white8;
-                cursor: pointer;
-            }
-        }
+    .keywordChip {
+      border-radius: 1000px;
+      background-color: $bg-transparent-solid;
+      padding: 0.75rem 1.5rem;
+      position: relative;
+      p {
+        font-weight: 500;
+      }
+      .crossIcon {
+        position: absolute;
+        justify-content: center;
+        top: 0;
+        right: 0;
+        width: 15px;
+        height: 15px;
+        border-radius: 1000px;
+        background-color: $white8;
+        cursor: pointer;
+      }
     }
+  }
+
   .dropdown {
     width: 100%;
     position: absolute;

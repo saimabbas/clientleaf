@@ -1,0 +1,35 @@
+.textInput {
+  width: 100%;
+  min-height: 50px;
+  padding: 1.6rem 0 1.6rem 1.5rem;
+  background: transparent;
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  padding-right: 1.5rem;
+  transition: all 0.3s ease;
+}
+.textInput:hover {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.textInput::-moz-placeholder {
+  font-size: 1.6rem;
+  color: #6b7280;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+.textInput::placeholder {
+  font-size: 1.6rem;
+  color: #6b7280;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}/*# sourceMappingURL=TextInput.module.css.map */

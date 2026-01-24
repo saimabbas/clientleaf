@@ -1,8 +1,6 @@
 "use client";
 import Selector from "@/app/components/ui/form/inputs/Selector/Selector";
 import styles from "./FreelancerReqForm.module.scss";
-import KeywordSelector from "@/app/components/ui/form/inputs/KeywordSelector/KeywordSelector";
-import Checkbox from "@/app/components/ui/form/inputs/Checkbox/Checkbox";
 import TextInput from "@/app/components/ui/form/inputs/TextInput/TextInput";
 
 const talentType = [
@@ -14,11 +12,6 @@ const jobOptions = [
   { value: "Designer", label: "Designer" },
   { value: "Backend Developer", label: "Backend Developer" },
 ];
-const successScore = [
-  { value: "At least 90%+", label: "At least 90%+" },
-  { value: "At least 80%+", label: "At least 80%+" },
-  { value: "At least 70%+", label: "At least 70%+" },
-];
 
 const englishLevel = [
   { value: "Fluent", label: "Fluent" },
@@ -26,13 +19,9 @@ const englishLevel = [
   { value: "Basic", label: "Basic" },
 ];
 
-export default function FreelancerReqForm() {
+export default function FreelancerReqForm({ isViewMode = false }) {
   const handleSelect = (selectedOption) => {
     console.log("Selected", selectedOption);
-  };
-
-  const handleKeywordsChange = (selected) => {
-    console.log("Selected keywords:", selected);
   };
 
   return (
@@ -49,6 +38,7 @@ export default function FreelancerReqForm() {
                 placeholder="Agency only"
                 options={talentType}
                 onSelect={handleSelect}
+                disabled={isViewMode}
               />
             </div>
             <div className={`${styles.inputContainer} flexCol`}>
@@ -59,6 +49,7 @@ export default function FreelancerReqForm() {
                 placeholder="Include"
                 options={jobOptions}
                 onSelect={handleSelect}
+                disabled={isViewMode}
               />
             </div>
           </div>
@@ -66,12 +57,7 @@ export default function FreelancerReqForm() {
           <div className={`${styles.colOne} flexCol`}>
             <div className={`${styles.inputContainer} flexCol`}>
               <label className="p1 font-quicksand">Job Success Score</label>
-              {/* <Selector
-                placeholder="At least 90%+"
-                options={successScore}
-                onSelect={handleSelect}
-              /> */}
-               <TextInput placeholder="At least 90%+" />
+              <TextInput placeholder="At least 90%+" disabled={isViewMode} />
             </div>
             <div className={`${styles.inputContainer} flexCol`}>
               <label className="p1 font-quicksand">
@@ -81,6 +67,7 @@ export default function FreelancerReqForm() {
                 placeholder="Exclude"
                 options={jobOptions}
                 onSelect={handleSelect}
+                disabled={isViewMode}
               />
             </div>
           </div>
@@ -92,6 +79,7 @@ export default function FreelancerReqForm() {
                 placeholder="Fluent"
                 options={englishLevel}
                 onSelect={handleSelect}
+                disabled={isViewMode}
               />
             </div>
             <div className={`${styles.inputContainer} flexCol`}>
@@ -102,6 +90,7 @@ export default function FreelancerReqForm() {
                 placeholder="Include"
                 options={jobOptions}
                 onSelect={handleSelect}
+                disabled={isViewMode}
               />
             </div>
           </div>

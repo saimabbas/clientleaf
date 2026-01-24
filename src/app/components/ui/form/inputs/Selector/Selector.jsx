@@ -10,6 +10,8 @@ export default function Selector({
   options = [],
   onSelect,
   leftIcon = null,
+  disabled = false,
+  error= "",
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -35,8 +37,8 @@ export default function Selector({
   return (
     <div className={`${styles.inputSelectorContainer}`} ref={dropdownRef}>
       <div
-        className={`${styles.inputSelector} flexRow ${isOpen ? styles.open : ""}`}
-        onClick={() => setIsOpen(!isOpen)}
+        className={`${styles.inputSelector} flexRow ${isOpen ? styles.open : ""} ${disabled ? styles.disabled : ""}`}
+        onClick={() => !disabled && setIsOpen(!isOpen)}
       >
         <div className={`${styles.left} flexRow`}>
           {leftIcon && <span className="flexCenter">{leftIcon}</span>}
@@ -46,6 +48,7 @@ export default function Selector({
             className="font-quicksand h6"
             value={selectedOption?.label || ""}
             readOnly
+            disabled= {disabled}
           />
         </div>
 
@@ -54,7 +57,9 @@ export default function Selector({
         </div>
       </div>
 
-      {isOpen && options.length > 0 && (
+      {error && <p className={styles.errorMessage}>{error}</p>}
+
+      {!disabled && isOpen && options.length > 0 && (
         <div className={styles.dropdown}>
           {options.map((option, index) => (
             <div

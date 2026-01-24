@@ -1,0 +1,60 @@
+.formContainer {
+  width: 100%;
+  gap: 2.5rem;
+}
+.formContainer .jobDetailsForm {
+  width: 100%;
+  gap: 2.5rem;
+}
+.formContainer .jobDetailsForm .jobDetailsFormGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.5rem;
+}
+.formContainer .jobDetailsForm .jobDetailsFormGrid .colOne {
+  width: 100%;
+  gap: 2.5rem;
+}
+.formContainer .jobDetailsForm .jobDetailsFormGrid .colOne .priceGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.formContainer .jobDetailsForm .jobDetailsFormGrid .colOne .inputContainer {
+  width: 100%;
+  gap: 1rem;
+}
+.formContainer .jobDetailsForm .jobDetailsFormGrid .colOne .inputContainer label {
+  color: #6b7280;
+  font-weight: 500;
+}
+.formContainer .jobDetailsForm .jobDetailsFormGrid .colOne .inputContainer .inputSelector {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  padding-right: 1.5rem;
+}
+.formContainer .jobDetailsForm .jobDetailsFormGrid .colOne .inputContainer .inputSelector input {
+  width: 100%;
+  padding: 1.6rem 0 1.6rem 1.5rem;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  min-height: 50px;
+}
+.formContainer .jobDetailsForm .jobDetailsFormGrid .colOne .inputContainer .inputSelector input::-moz-placeholder {
+  font-size: 1.6rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+.formContainer .jobDetailsForm .jobDetailsFormGrid .colOne .inputContainer .inputSelector input::placeholder {
+  font-size: 1.6rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+.formContainer .jobDetailsForm .jobDetailsFormGrid .colOne .inputContainer .inputSelector svg {
+  transform: rotate(180deg);
+}/*# sourceMappingURL=JobDetailsForm.module.css.map */

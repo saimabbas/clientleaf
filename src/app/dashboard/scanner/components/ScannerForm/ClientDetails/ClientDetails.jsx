@@ -1,11 +1,8 @@
-
-
 "use client";
 import Selector from "@/app/components/ui/form/inputs/Selector/Selector";
 import styles from "./ClientDetails.module.scss";
-import KeywordSelector from "@/app/components/ui/form/inputs/KeywordSelector/KeywordSelector";
-import Checkbox from "@/app/components/ui/form/inputs/Checkbox/Checkbox";
 import USAFlag from "../../../../../../../public/assets/svgs/USAFlag";
+import FeatureToggle from "@/app/components/ui/form/inputs/FeatureToggle/FeatureToggle";
 
 const rating = [
   { value: "5", label: "5" },
@@ -50,13 +47,9 @@ const totalSpend = [
 const included = [{ value: "included", label: "included" }];
 
 
-export default function PriceDetailsForm() {
+export default function PriceDetailsForm({ isViewMode = false }) {
   const handleSelect = (selectedOption) => {
     console.log("Selected", selectedOption);
-  };
-
-  const handleKeywordsChange = (selected) => {
-    console.log("Selected keywords:", selected);
   };
 
   return (
@@ -71,6 +64,7 @@ export default function PriceDetailsForm() {
                 placeholder="5"
                 options={rating}
                 onSelect={handleSelect}
+                disabled={isViewMode}
               />
             </div>
             <div className={`${styles.inputContainer} flexCol`}>
@@ -79,6 +73,7 @@ export default function PriceDetailsForm() {
                 placeholder="1 to 9 hires"
                 options={hiringHistory}
                 onSelect={handleSelect}
+                disabled={isViewMode}
               />
             </div>
             <div className={`${styles.inputContainer} flexCol`}>
@@ -87,6 +82,7 @@ export default function PriceDetailsForm() {
                 placeholder="$5K+"
                 options={totalSpend}
                 onSelect={handleSelect}
+                disabled={isViewMode}
               />
             </div>
           </div>
@@ -101,6 +97,7 @@ export default function PriceDetailsForm() {
                     placeholder="4 to 5 stars"
                     options={hoursPerWeek}
                     onSelect={handleSelect}
+                    disabled={isViewMode}
                   />
                 </div>
                 <div className={`${styles.inputContainer} flexCol`}>
@@ -109,6 +106,7 @@ export default function PriceDetailsForm() {
                     placeholder="More than 10"
                     options={hoursPerWeek}
                     onSelect={handleSelect}
+                    disabled={isViewMode}
                   />
                 </div>
               </div>
@@ -119,6 +117,7 @@ export default function PriceDetailsForm() {
                     placeholder="$20"
                     options={hoursPerWeek}
                     onSelect={handleSelect}
+                    disabled={isViewMode}
                   />
                 </div>
                 <div className={`${styles.inputContainer} flexCol`}>
@@ -127,17 +126,18 @@ export default function PriceDetailsForm() {
                     placeholder="75%"
                     options={hoursPerWeek}
                     onSelect={handleSelect}
+                    disabled={isViewMode}
                   />
                 </div>
               </div>
                <div className={`${styles.priceGrid} ${styles.fullHeight} flexRow`}>
                 <div className={`${styles.inputContainer} ${styles.fullHeight} flexCol`}>
                   <label className="p1 font-quicksand">Enterprise Clients</label>
-                   <Checkbox options={included} />
+                    <FeatureToggle disabled={isViewMode} />
                 </div>
                 <div className={`${styles.inputContainer} ${styles.fullHeight} flexCol`}>
                   <label className="p1 font-quicksand">Payment Method Verified</label>
-                   <Checkbox options={included} />
+                    <FeatureToggle disabled={isViewMode} />
                 </div>
               </div>
             </div>
@@ -152,6 +152,7 @@ export default function PriceDetailsForm() {
                 options={rating}
                 onSelect={handleSelect}
                 leftIcon={<USAFlag />}
+                disabled={isViewMode}
               />
             </div>
             <div className={`${styles.inputContainer} flexCol`}>
@@ -161,6 +162,7 @@ export default function PriceDetailsForm() {
                 options={hiringHistory}
                 onSelect={handleSelect}
                  leftIcon={<USAFlag />}
+                 disabled={isViewMode}
               />
             </div>
           </div>

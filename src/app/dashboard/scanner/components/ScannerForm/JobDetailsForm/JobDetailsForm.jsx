@@ -3,6 +3,7 @@ import Selector from "@/app/components/ui/form/inputs/Selector/Selector";
 import styles from "./JobDetailsForm.module.scss";
 import KeywordSelector from "@/app/components/ui/form/inputs/KeywordSelector/KeywordSelector";
 import Checkbox from "@/app/components/ui/form/inputs/Checkbox/Checkbox";
+import FeatureToggle from "@/app/components/ui/form/inputs/FeatureToggle/FeatureToggle";
 
 const screenOptions = [
   { value: "With screening questions", label: "With screening questions" },
@@ -35,9 +36,8 @@ const checkboxOptions = [
   { value: "keywords", label: "Search in Highlighted Keywords" },
 ];
 
-const included = [{ value: "included", label: "included" }];
 
-export default function JobDetailsForm() {
+export default function JobDetailsForm({ isViewMode = false }) {
   const handleSelect = (selectedOption) => {
     console.log("Selected", selectedOption);
   };
@@ -58,6 +58,7 @@ export default function JobDetailsForm() {
                   placeholder="Web & Mobile Design"
                   options={categoryOptions}
                   onSelect={handleSelect}
+                  disabled={isViewMode}
                 />
               </div>
               <div className={`${styles.inputContainer} flexCol`}>
@@ -66,6 +67,7 @@ export default function JobDetailsForm() {
                   placeholder="1 to 3 months"
                   options={projectLengthOptions}
                   onSelect={handleSelect}
+                  disabled={isViewMode}
                 />
               </div>
               <div className={`${styles.inputContainer} flexCol`}>
@@ -74,16 +76,17 @@ export default function JobDetailsForm() {
                   placeholder="With screening questions"
                   options={screenOptions}
                   onSelect={handleSelect}
+                  disabled={isViewMode}
                 />
               </div>
                <div className={`${styles.priceGrid} flexRow`}>
                 <div className={`${styles.inputContainer} flexCol`}>
                   <label className="p1 font-quicksand">Enterprise Clients</label>
-                   <Checkbox options={included} />
+                   <FeatureToggle disabled={isViewMode} />
                 </div>
                 <div className={`${styles.inputContainer} flexCol`}>
                   <label className="p1 font-quicksand">Payment Method Verified</label>
-                   <Checkbox options={included} />
+                    <FeatureToggle disabled={isViewMode} />
                 </div>
               </div>
             </div>
@@ -95,12 +98,13 @@ export default function JobDetailsForm() {
                   placeholder="Search keywords"
                   options={keywordOptions}
                   onSelect={handleKeywordsChange}
+                  disabled={isViewMode}
                 />
               </div>
 
               <div className="divider"></div>
 
-              <Checkbox options={checkboxOptions} />
+              <Checkbox options={checkboxOptions} disabled={isViewMode} />
             </div>
 
             <div className={`${styles.colOne} flexCol`}>
@@ -110,10 +114,11 @@ export default function JobDetailsForm() {
                   placeholder="Search keywords"
                   options={keywordOptions}
                   onSelect={handleKeywordsChange}
+                  disabled={isViewMode}
                 />
               </div>
               <div className="divider"></div>
-              <Checkbox options={checkboxOptions} />
+              <Checkbox options={checkboxOptions} disabled={isViewMode} />
             </div>
              
           </div>

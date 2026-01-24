@@ -1,0 +1,58 @@
+.checkboxContainer {
+  gap: 1.5rem;
+}
+.checkboxContainer.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.checkboxContainer.disabled .option {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.checkboxContainer .option {
+  position: relative;
+  gap: 1rem;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  transition: all 0.2s ease;
+  /* Disabled subtle effect */
+}
+.checkboxContainer .option input[type=checkbox] {
+  display: none;
+}
+.checkboxContainer .option h6 {
+  transition: all 0.3s ease;
+}
+.checkboxContainer .option h6:hover {
+  color: rgba(229, 231, 235, 0.75);
+}
+.checkboxContainer .option .customCheckbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.04);
+  transition: all 0.3s ease;
+}
+.checkboxContainer .option .customCheckbox:hover {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.checkboxContainer .option .customCheckbox svg {
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.checkboxContainer .option .checked svg {
+  opacity: 1 !important;
+}
+.checkboxContainer .option:not(.disabled):hover .customCheckbox svg {
+  opacity: 0.45;
+}
+.disabled .checkboxContainer .option .customCheckbox svg {
+  opacity: 0.5;
+}/*# sourceMappingURL=Checkbox.module.css.map */

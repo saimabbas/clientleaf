@@ -32,6 +32,11 @@ export const navItems = [
         path: "/dashboard/scanner",
         icon: "Smile",
       },
+      {
+        name: "View Scanners",
+        path: "/dashboard/view-scanner",
+        icon: "Smile",
+      },
     ],
   },
   {

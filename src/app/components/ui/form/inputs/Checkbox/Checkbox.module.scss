@@ -3,45 +3,74 @@
 .checkboxContainer {
   gap: 1.5rem;
 
+  &.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+
+    .option {
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+  }
+
   .option {
     position: relative;
     gap: 1rem;
     cursor: pointer;
     align-items: center;
     display: flex;
+    transition: all 0.2s ease;
 
     input[type="checkbox"] {
-      display: none; 
+      display: none;
+    }
+
+    h6 {
+      transition: all 0.3s ease;
+      &:hover {
+        color: rgba(229, 231, 235, 0.75);
+      }
     }
 
     .customCheckbox {
       width: 20px;
       height: 20px;
-    //   border: 1px solid $border-color;
-    border: none;
+      border: 1px solid transparent;
       border-radius: 6px;
       display: flex;
       justify-content: center;
       align-items: center;
       background-color: $bg-transparent-solid;
-      transition: all 0.2s ease;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: $white8;
+      }
 
       svg {
         width: 10px;
         height: 10px;
-        opacity: 0; 
-        transition: opacity 0.2s ease;
+        opacity: 0;
+        transition: opacity 0.3s ease;
       }
     }
-
     .checked {
-    //   background-color: ;
-    //   border-color: ;
-      
       svg {
-        opacity: 1; 
+        opacity: 1 !important;
       }
     }
 
+    &:not(.disabled):hover .customCheckbox {
+      svg {
+        opacity: 0.45;
+      }
+    }
+
+    /* Disabled subtle effect */
+    .disabled & {
+      .customCheckbox svg {
+        opacity: 0.5;
+      }
+    }
   }
 }

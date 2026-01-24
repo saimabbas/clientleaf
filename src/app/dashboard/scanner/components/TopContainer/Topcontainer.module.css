@@ -1,0 +1,14 @@
+.topContainer {
+  width: 100%;
+  border-radius: 15px;
+  gap: 3.5rem;
+}
+.topContainer .information {
+  width: 100%;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.topContainer .information .icon {
+  flex-shrink: 0;
+  padding-top: 0.15rem;
+}/*# sourceMappingURL=Topcontainer.module.css.map */

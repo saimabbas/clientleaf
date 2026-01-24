@@ -1,0 +1,58 @@
+@import "../../../../../styles/variables";
+
+.option {
+  position: relative;
+  gap: 1rem;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+
+  &.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &.disabled .customCheckbox {
+    pointer-events: none;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .customCheckbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $bg-transparent-solid;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+
+    &:hover {
+      border-color: $white8;
+    }
+
+    svg {
+      width: 8px;
+      height: 8px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  .checked {
+    svg {
+      opacity: 1;
+    }
+  }
+
+  .excluded {
+    // background-color: $bg-light-gray;
+    svg {
+      opacity: 1;
+    }
+  }
+}
